@@ -120,7 +120,7 @@
     </div>
 
     <script>
-      fetch("/page/support/2/luaApiDocument/menu.html")
+      fetch("menu.html")
         .then((r) => r.text())
         .then((html) => {
           document.getElementById("menu").innerHTML = html;
