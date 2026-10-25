@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐TweenSequence</h2>
+          <div class="content-box">
+            <p>複数のTweenを順番に実行するためのタイムラインです。</p>
+          </div>
+          <h3>🌸作成</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>関数</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>game.TweenSequence()</td>
+                <td>TweenSequence</td>
+                <td>※「3-6.game」参照</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸メソッド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TweenSequence:Append(tween: Tween)</td>
+                <td>TweenSequence</td>
+                <td>シーケンスの末尾にTweenを追加します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:AppendInterval(interval: number)</td>
+                <td>TweenSequence</td>
+                <td>シーケンスの末尾に指定した秒数の待機時間を追加します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:AppendCallback(callback: fun())</td>
+                <td>TweenSequence</td>
+                <td>シーケンスの末尾にコールバックを追加します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Join(tween: Tween)</td>
+                <td>TweenSequence</td>
+                <td>
+                  現在の末尾のステップと同時に再生します<br />
+                  ※ステップの終了タイミングは最も遅いものに合わせられます
+                </td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Insert(time: number, tween: Tween)</td>
+                <td>TweenSequence</td>
+                <td>指定した時間にTweenを挿入します</td>
+              </tr>
+              <tr>
+                <td>
+                  TweenSequence:InsertCallback(time: number, callback: fun())
+                </td>
+                <td>TweenSequence</td>
+                <td>指定した時間にコールバックを挿入します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Play()</td>
+                <td>TweenSequence</td>
+                <td>シーケンスの再生を開始し、現在のインスタンスを返します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Pause()</td>
+                <td>－</td>
+                <td>シーケンスを一時停止します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Resume()</td>
+                <td>－</td>
+                <td>シーケンスを再開します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Restart()</td>
+                <td>－</td>
+                <td>初期状態に戻って最初から再生します</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Complete()</td>
+                <td>－</td>
+                <td>シーケンス全体を終了させます</td>
+              </tr>
+              <tr>
+                <td>TweenSequence:Kill(complete: boolean)</td>
+                <td>－</td>
+                <td>
+                  シーケンスを破棄します<br />
+                  ※true: 完了のコールバックを呼び出します<br />
+                  ※false: 完了のコールバックを呼び出しません
+                </td>
+              </tr>
+              <tr>
+                <td>TweenSequence:SetOnComplete(onComplete: fun())</td>
+                <td>TweenSequence</td>
+                <td>
+                  シーケンスが完了した後のコールバックを設定し、
+                  現在のインスタンスを返します
+                </td>
+              </tr>
+              <tr>
+                <td>TweenSequence:SetOnStepComplete(onStepComplete: fun())</td>
+                <td>TweenSequence</td>
+                <td>
+                  ステップ完了時のコールバックを設定し、
+                  現在のインスタンスを返します
+                </td>
+              </tr>
+              <tr>
+                <td>TweenSequence:SetLoops(times: integer)</td>
+                <td>TweenSequence</td>
+                <td>
+                  ループ回数を設定し、現在のインスタンスを返します<br />
+                  ※無限ループの場合は、負の数を設定します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

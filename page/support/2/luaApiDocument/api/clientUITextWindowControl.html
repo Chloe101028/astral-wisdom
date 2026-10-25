@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐ClientUITextWindowControl</h2>
+          <h3>🌸フィールド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>フィールド</th>
+                <th>型</th>
+                <th>アクセス</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>interactable</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>インタラクト可能かどうか</td>
+              </tr>
+              <tr>
+                <td>showScrollBar</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>スクロールバーを表示するかどうか</td>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td>string</td>
+                <td>読み書き可能</td>
+                <td>表示テキスト</td>
+              </tr>
+              <tr>
+                <td>fontSize</td>
+                <td>integer</td>
+                <td>読み書き可能</td>
+                <td>
+                  フォントサイズ<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>fontColor</td>
+                <td>ColorValue</td>
+                <td>読み書き可能</td>
+                <td>
+                  文字色<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>bgColor</td>
+                <td>ColorValue</td>
+                <td>読み書き可能</td>
+                <td>
+                  背景色<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>enableOutline</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>縁取りを有効にするかどうか</td>
+              </tr>
+              <tr>
+                <td>outlineColor</td>
+                <td>ColorValue</td>
+                <td>読み書き可能</td>
+                <td>
+                  縁取り色<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>horizontalAlignment</td>
+                <td>TextHorizontalAlignment</td>
+                <td>読み書き可能</td>
+                <td>横方向の揃え位置</td>
+              </tr>
+              <tr>
+                <td>verticalAlignment</td>
+                <td>TextVerticalAlignment</td>
+                <td>読み書き可能</td>
+                <td>縦方向の揃え位置</td>
+              </tr>
+              <tr>
+                <td>adaptiveFontSize</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>フォントサイズを自動で調整するかどうか</td>
+              </tr>
+              <tr>
+                <td>minimumFontSize</td>
+                <td>integer</td>
+                <td>読み書き可能</td>
+                <td>
+                  自動調整のフォントの最小サイズ<br />
+                  ※Tween可能
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

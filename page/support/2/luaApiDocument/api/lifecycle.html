@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐スクリプトのライフサイクル</h2>
+          <div class="content-box">
+            該当の関数を紐づけられたクライアントスクリプト内に記述しておくことで、条件を満たした時に自動的に呼び出されます。<br />
+            ※ノードグラフのイベントノードと同じようなものです。
+          </div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>関数</th>
+                <th>引数</th>
+                <th>呼び出し条件</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OnInit()</td>
+                <td>－</td>
+                <td>スクリプトの初期化時</td>
+              </tr>
+              <tr>
+                <td>OnStrat()</td>
+                <td>－</td>
+                <td>スクリプトの起動時</td>
+              </tr>
+              <tr>
+                <td>OnEnable()</td>
+                <td>－</td>
+                <td>スクリプトの有効化時</td>
+              </tr>
+              <tr>
+                <td>OnDisable()</td>
+                <td>－</td>
+                <td>スクリプトの無効化時</td>
+              </tr>
+              <tr>
+                <td>OnUpdate(dt)</td>
+                <td>dt:number</td>
+                <td>毎フレーム<br />※ステージの時間停止の影響を受けません</td>
+              </tr>
+              <tr>
+                <td>OnLevelUpdate(dt)</td>
+                <td>dt:number</td>
+                <td>毎フレーム<br />※ステージの時間停止の影響を受けます</td>
+              </tr>
+              <tr>
+                <td>OnDestroy()</td>
+                <td>－</td>
+                <td>スクリプトの破棄時</td>
+              </tr>
+            </tbody>
+          </table>
+          *dt:
+          デルタタイム　：前回のフレームから今回のフレームまでに経過した時間
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

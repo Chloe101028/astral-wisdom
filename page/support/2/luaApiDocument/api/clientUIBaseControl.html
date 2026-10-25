@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐クライアントコントロール</h2>
+          <div class="content-box">
+            クライアントコントロールのベースクラスです。<br />
+            階層、レイアウト、スクリプトからのアクセス、入力の監視、およびコントローラー（ゲームパッド）ナビゲーション機能を提供します。
+          </div>
+          <h3>🌸フィールド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>フィールド名</th>
+                <th>型</th>
+                <th>アクセス</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>alive</td>
+                <td>boolean</td>
+                <td>読み取り専用</td>
+                <td>コントロールが存在しているか</td>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td>integer</td>
+                <td>読み取り専用</td>
+                <td>実行時ID</td>
+              </tr>
+              <tr>
+                <td>prefabIndex</td>
+                <td>integer</td>
+                <td>読み取り専用</td>
+                <td>コントロールのテンプレートインデックス</td>
+              </tr>
+              <tr>
+                <td>active</td>
+                <td>boolean</td>
+                <td>読み取り専用</td>
+                <td>
+                  アクティブ状態<br />
+                  true:
+                  コントロールは表示され、スクリプトのロジックが実行されます<br />
+                  false:
+                  コントロールは非表示となり、スクリプトのロジックも停止します<br />
+                  ※デフォルトはfalse
+                </td>
+              </tr>
+              <tr>
+                <td>activeInHierarchy</td>
+                <td>boolean</td>
+                <td>読み取り専用</td>
+                <td>すべての親要素を考慮した実際のアクティブ状態</td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>boolean</td>
+                <td>読み取り専用</td>
+                <td>
+                  表示・非表示のみを制御し、アクティブ状態やスクリプトロジック実行状態は変更しません
+                </td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>読み書き可能</td>
+                <td>コントロール名</td>
+              </tr>
+              <tr>
+                <td>parent</td>
+                <td>ClientUIBaseControl</td>
+                <td>読み書き可能</td>
+                <td>親コントロール</td>
+              </tr>
+              <tr>
+                <td>anchoredPositionX,<br />anchoredPositionY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  位置<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>sizeDeltaX,<br />sizeDeltaY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  サイズ<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>anchorMinX,<br />anchorMinY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  最小アンカー<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>anchorMaxX,<br />anchorMaxY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  最大アンカー<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>pivotX,<br />pivotY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  中心<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>localScaleX,<br />localScaleY,<br />localScaleZ</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  ズーム<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  localRotationX,<br />localRotationY,<br />localRotationZ
+                </td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  回転<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>canControllerFocus</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>
+                  コントローラーのスティックによるナビゲーションで選択可能
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸階層と表示状態</h3>
+          <br />
+          再利用されたリストによって生成された項目については、同階層内での並び順が常に一定であることを保証しません。
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GetChildren()</td>
+                <td>ClientUIBaseControl[]</td>
+                <td>子のコントロールを取得します</td>
+              </tr>
+              <tr>
+                <td>GetChild(name)</td>
+                <td>ClientUIBaseControl</td>
+                <td>
+                  カレントコントロール内の指定した名称の子のコントロールを取得します
+                </td>
+              </tr>
+              <tr>
+                <td>FindChild(path)</td>
+                <td>ClientUIBaseControl</td>
+                <td>パスに基づいて子のコントロールを取得します</td>
+              </tr>
+              <tr>
+                <td>SetActive(active)</td>
+                <td>－</td>
+                <td>
+                  アクティブ状態を設定します<br />
+                  非アクティブにするとコントロールが非表示になり、
+                  紐づけされているスクリプトのロジック実行も停止します
+                </td>
+              </tr>
+              <tr>
+                <td>SetVisible(visible)</td>
+                <td>－</td>
+                <td>
+                  表示状態を設定します<br />
+                  アクティブ状態には影響しません
+                </td>
+              </tr>
+              <tr>
+                <td>GetSiblingIndex()</td>
+                <td>integer</td>
+                <td>
+                  同階層内での並び順インデックスを取得します<br />
+                  戻り値の範囲は0から「親コントロールの子コントロール数-1」です
+                </td>
+              </tr>
+              <tr>
+                <td>SetSiblingIndex(index)</td>
+                <td>boolean</td>
+                <td>
+                  同階層内での並び順インデックスを設定します<br />
+                  indexの範囲は0から「親コントロールの子コントロール数-1」です
+                </td>
+              </tr>
+              <tr>
+                <td>SetAsFirstSibling()</td>
+                <td>boolean</td>
+                <td>同階層の先頭に移動します</td>
+              </tr>
+              <tr>
+                <td>SetAsLastSibling()</td>
+                <td>boolean</td>
+                <td>同階層の末尾に移動します</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸レイアウトと置換</h3>
+          <br />
+          親子階層における移動、拡大縮小、可視性、不透明度、反転、クリッピング効果は、実行時のUI階層によって決定されます。<br />
+          複合レイアウトを使用する場合は、実際の表示結果を確認してください。
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GetAnchoredPosition()</td>
+                <td>x, y</td>
+                <td>
+                  親階層がない場合はキャンバスの左下を原点として位置を取得し、
+                  親階層がある場合は親階層の中心からの相対オフセットを取得します
+                </td>
+              </tr>
+              <tr>
+                <td>SetAnchoredPosition(x, y)</td>
+                <td>－</td>
+                <td>
+                  親階層がない場合はキャンバスの左下を原点として位置を設定し、
+                  親階層がある場合は親階層の中心からの相対オフセットを設定します
+                </td>
+              </tr>
+              <tr>
+                <td>GetSizeDelta()</td>
+                <td>x, y</td>
+                <td>サイズの取得</td>
+              </tr>
+              <tr>
+                <td>SetSizeDelta(x, y)</td>
+                <td>－</td>
+                <td>サイズの設定</td>
+              </tr>
+              <tr>
+                <td>GetAnchorMin()</td>
+                <td>x, y</td>
+                <td>最小アンカーの取得</td>
+              </tr>
+              <tr>
+                <td>SetAnchorMin(x, y)</td>
+                <td>－</td>
+                <td>最小アンカーの設定</td>
+              </tr>
+              <tr>
+                <td>GetAnchorMax()</td>
+                <td>x, y</td>
+                <td>最大アンカーの取得</td>
+              </tr>
+              <tr>
+                <td>SetAnchorMax(x, y)</td>
+                <td>－</td>
+                <td>最大アンカーの設定</td>
+              </tr>
+              <tr>
+                <td>GetPivot()</td>
+                <td>x, y</td>
+                <td>中心の取得</td>
+              </tr>
+              <tr>
+                <td>SetPivot(x, y)</td>
+                <td>－</td>
+                <td>中心の設定</td>
+              </tr>
+              <tr>
+                <td>GetLocalScale()</td>
+                <td>x, y, z</td>
+                <td>ズーム比の取得</td>
+              </tr>
+              <tr>
+                <td>SetLocalScale(x, y, z)</td>
+                <td>－</td>
+                <td>ズーム比の設定</td>
+              </tr>
+              <tr>
+                <td>GetLocalRotation()</td>
+                <td>x, y, z</td>
+                <td>回転の取得</td>
+              </tr>
+              <tr>
+                <td>SetLocalRotation(x, y, z)</td>
+                <td>－</td>
+                <td>回転の設定</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸スクリプトへのアクセス</h3>
+          <br />
+          返されるスクリプトのインスタンスは、破棄され存在していない可能性があります。<br />
+          使用する前に script.alive で確認してください。
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GetScriptByPath(scriptPath)</td>
+                <td>Script</td>
+                <td>パス指定で紐づけられているスクリプトを取得します</td>
+              </tr>
+              <tr>
+                <td>GetScript(scriptMappingId)</td>
+                <td>Script</td>
+                <td>スクリプトマッピングIDでスクリプトを取得します</td>
+              </tr>
+              <tr>
+                <td>GetScripts()</td>
+                <td>Script[]</td>
+                <td>コントロール上のすべてのスクリプトを取得します</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸キーボード・マウス / コントローラーのイベント</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AddNavigationEventListener(eventType, callback)</td>
+                <td>－</td>
+                <td>
+                  監視するコントローラーナビゲーションイベントを登録します
+                </td>
+              </tr>
+              <tr>
+                <td>RemoveNavigationEventListener(eventType, callback)</td>
+                <td>－</td>
+                <td>
+                  登録したコントローラーナビゲーションイベントの監視を解除します
+                </td>
+              </tr>
+              <tr>
+                <td>RemoveNavigationEventListeners(eventType)</td>
+                <td>－</td>
+                <td>
+                  指定したコントローラーナビゲーションイベントのすべての監視を解除します
+                </td>
+              </tr>
+              <tr>
+                <td>RemoveAllNavigationEventListeners()</td>
+                <td>－</td>
+                <td>
+                  すべてのコントローラーナビゲーションイベントの監視を解除します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸コントローラーナビゲーションの設定</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  SetControllerNavigation(navigationDir, navigationMode,
+                  navigationTarget)
+                </td>
+                <td>－</td>
+                <td>
+                  指定した方向のナビゲーションモードおよびターゲットコントロールを設定します<br />
+                  ターゲットには nil を指定できます
+                </td>
+              </tr>
+              <tr>
+                <td>GetControllerNavigation(navigationDir)</td>
+                <td>navigationMode, navigationTarget</td>
+                <td>
+                  指定した方向のナビゲーションモードおよびターゲットコントロールを取得します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

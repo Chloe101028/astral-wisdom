@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐ServerSignal</h2>
+          <div class="content-box">
+            <p>
+              信号を作成し、サーバーへ送信します。<br />
+              引数はサーバーの使用に従って順に追加します。
+            </p>
+          </div>
+          <h3>🌸作成</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>関数</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>game.ServerSignal(signalName: string)</td>
+                <td>ServerSignal</td>
+                <td>サーバーへ送信する信号オブジェクトを取得します</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸メソッド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  ServerSignal:AddParam(paramType: ParamType, paramValue: any)
+                </td>
+                <td>－</td>
+                <td>
+                  paramTypeでパラメータの型、paramValueでパラメータの値を設定します
+                </td>
+              </tr>
+              <tr>
+                <td>ServerSignal:SendSignal()</td>
+                <td>－</td>
+                <td>作成済みの信号を送信します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddInt(intValue: integer)</td>
+                <td>－</td>
+                <td>パラメータ(整数)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddIntList(intListValue: integer[])</td>
+                <td>－</td>
+                <td>パラメータ(整数リスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddFloat(floatValue: number)</td>
+                <td>－</td>
+                <td>パラメータ(浮動小数点数)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddFloatList(floatListValue: number[])</td>
+                <td>－</td>
+                <td>パラメータ(浮動小数点数リスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddString(stringValue: string)</td>
+                <td>－</td>
+                <td>パラメータ(文字列)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddStringList(stringListValue: string[])</td>
+                <td>－</td>
+                <td>パラメータ(文字列リスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddVector3(vector3Value: table)</td>
+                <td>－</td>
+                <td>パラメータ(3Dベクトル)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddVector3List(vector3ListValue: table[])</td>
+                <td>－</td>
+                <td>パラメータ(3Dベクトルリスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddBool(boolValue: boolean)</td>
+                <td>－</td>
+                <td>パラメータ(ブール値)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddBoolList(boolListValue: boolean[])</td>
+                <td>－</td>
+                <td>パラメータ(ブール値リスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddGuid(guidValue: integer)</td>
+                <td>－</td>
+                <td>パラメータ(GUID)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddGuidList(guidListValue: integer[])</td>
+                <td>－</td>
+                <td>パラメータ(GUIDリスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddEntity(entityValue: integer)</td>
+                <td>－</td>
+                <td>パラメータ(エンティティ)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddEntityList(entityListValue: integer[])</td>
+                <td>－</td>
+                <td>パラメータ(エンティティリスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddPrefabId(prefabIdValue: integer)</td>
+                <td>－</td>
+                <td>パラメータ(プレハブID)を追加します</td>
+              </tr>
+              <tr>
+                <td>
+                  ServerSignal:AddPrefabIdList(prefabIdListValue: integer[])
+                </td>
+                <td>－</td>
+                <td>パラメータ(プレハブIDリスト)を追加します</td>
+              </tr>
+              <tr>
+                <td>ServerSignal:AddConfigId(configIdValue: integer)</td>
+                <td>－</td>
+                <td>パラメータ(配置ID)を追加します</td>
+              </tr>
+              <tr>
+                <td>
+                  ServerSignal:AddConfigIdList(configIdListValue: integer[])
+                </td>
+                <td>－</td>
+                <td>パラメータ(配置IDリスト)を追加します</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

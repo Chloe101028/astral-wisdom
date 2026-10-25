@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐Color</h2>
+          <div class="content-box">
+            <p>
+              星々の幻境では、色を表現する時に「R:赤」「G:緑」「B:青」「A:透明度」で表します。<br />
+
+              例えば、Color(255,0,0,255)なら完全な赤色になります。<br />
+
+              引数に「?」がついているものは省略可能で、省略した場合は初期値が設定されます。
+            </p>
+          </div>
+          <h3>🌸コンストラクタ</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>コンストラクタ</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Color(r: number, g: number, b: number, a: number?)</td>
+                <td>ColorValue</td>
+                <td>
+                  0〜255のRGBA値からカラーを作成します<br />
+                  aの初期値は255（不透明）
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸関数</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>関数</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Color.FromRGB(r: number, g: number, b: number)</td>
+                <td>ColorValue</td>
+                <td>0〜255のRGB値からカラーを作成します</td>
+              </tr>
+              <tr>
+                <td>
+                  Color.FromRGBA(r: number, g: number, b: number, a: number?)
+                </td>
+                <td>ColorValue</td>
+                <td>
+                  0〜255のRGBA値からカラーを作成します<br />
+                  aの初期値は255（不透明）
+                </td>
+              </tr>
+              <tr>
+                <td>Color.ToRGBA(colorValue: ColorValue)</td>
+                <td>r, g, b, a:number</td>
+                <td>カラーを0〜255のRGBAの4つの値に分解します</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

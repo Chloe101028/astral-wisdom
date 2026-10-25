@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <br />
+      <!--記事開始-->
+      <section class="section">
+        <h2>1.環境を整える</h2>
+        <div class="article-meta">投稿日: 2026.10.12</div>
+      </section>
+
+      <section class="section">
+        <div class="content-box">
+          <p>
+            ここでは、まずソースコードを書くために快適な環境を整えていきます。<br />
+            ※私のPCは、WindowsなのでMacを使用している方は、同じ手順でできない可能性があります。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>⭐Visual Studio Code(VSCode)をインストール</h2>
+        <section class="section">
+          <p>
+            VSCodeは、便利なメモ帳みたいなものです。<br />
+            ソースコードに色付けて見やすくしてくれたり、自動補完機能がついていたりなどなど…<br /><br />
+            ただ、これをインストールしなくても、PCに入ってるメモ帳でソースコードを書くことはできます。<br /><br />
+            最近は、AIにソースコードを書いてもらったりするらしいですが、そういう場合は使わないんですかね？<br />
+            私は、AIについていけてないので、昔ながらのやり方で進めますが、不要な方はインストールしなくて大丈夫です。
+          </p>
+          <br />
+          <a href="https://code.visualstudio.com/download"
+            >VSCode ダウンロードページ</a
+          ><br /><br />上記のリンクから、ファイルをダウンロードして進めていって、VSCodeを開いてください。
+        </section>
+
+        <section class="section">
+          <img src="img/1.png" />
+          <br /><br />
+          今、私の画面は日本語になっていますが、最初は英語だと思うので拡張機能をインストールします。<br />
+          <br />
+          <img src="img/2.png" /><br /><br />
+          左のサイドメニューにある、四角が4つのアイコンをクリックします。<br /><br />
+          <img src="img/3.png" /><br /><br />
+          検索欄に「日本語」と入れて、出てきた地球儀アイコンのパッケージをインストールしてください。<br />
+          これでVSCodeが日本語になります。<br /><br />
+          また、検索欄に「Lua」と入れて、画像と同じアイコンのパッケージもインストールしてください。<br />
+          これでLuaを使えるようになります。<br /><br />
+          <p style="color: tomato">
+            ※拡張機能をインストールした後は、VSCodeを開き直すことで拡張機能が反映されると思います。
+          </p>
+        </section>
+      </section>
+
+      <section class="section">
+        <h2>⭐作業用のフォルダをVSCodeで開く</h2>
+        <section class="section">
+          VSCodeの作業用フォルダを開きます。<br /><br />
+
+          どこにあるフォルダでも問題ありませんが、ここでは星々の幻境のプロジェクトフォルダを作業用フォルダとして進めます。
+          <br /><br />
+          <img src="img/4.png" /><br /><br />
+          星々の幻境のエディタ画面を開きます。<br /><br />
+          ウィンドウから、クライアントスクリプトリソースマネージャーをクリックします。<br /><br />
+          <img src="img/5.png" /><br /><br />
+          フォルダの中で、右クリックをして「クライアントスクリプト新規作成」をクリックします。<br />
+          ※フォルダー名を変更しているので、「Lua勉強用」となっていますが、何もしていなければ「未分類タブ」になっていると思います。<br /><br />
+          <img src="img/6.png" /><br /><br />
+          フォルダパスをすべてコピーしてください。<br /><br />
+          <img src="img/7.png" /><br /><br />
+          VSCodeの方に移動し、左上のファイルから「フォルダーを開く」をクリックして、先ほどコピーしたフォルダパスのフォルダを選択します。<br /><br />
+          <img src="img/8.png" /><br /><br />
+          フォルダを選択すると、左側に「external_lua_file」と表示されていると思います。<br />
+          ※このエリアが表示されていなかったら、左のサイドメニューの一番上のアイコンをクリックしてすることでこのエリアが表示されます。<br /><br />
+          これで星々の幻境のプロジェクトフォルダをVSCodeの作業用フォルダにすることができました。
+        </section>
+      </section>
+
+      <section class="section">
+        <h2>⭐いくつかの設定</h2>
+        <section class="section">
+          ソースコードを見やすくするための設定を行います。<br />
+          ※必須ではないので、不要な方はしなくて大丈夫です。<br /><br />
+          <img src="img/9.png" /><br /><br />
+          左下の歯車マークのアイコンでメニューを開き、「設定」をクリックします。<br /><br />
+          <img src="img/10.png" /><br /><br />
+          Editor: Format On Saveにチェックを入れます。<br />
+          これで保存時に自動でソースコードを整形します。 Editor: Default<br /><br />
+          Formatterを「Lua」に変更します。<br /><br />
+          <img src="img/11.png" /><br /><br />
+          検索欄で「Non Basic
+          ASCII」と入力し、出てきたプルダウンの「false」に変更します。<br />
+          これで日本語がソースコード内に書かれた時に警告が出なくなります。
+        </section>
+      </section>
+    </main>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../../js/style.js"></script>
+  </body>
+</html>

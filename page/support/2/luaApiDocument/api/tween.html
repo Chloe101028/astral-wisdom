@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐Tween</h2>
+          <div class="content-box">
+            <p>
+              Tweenオブジェクトに対して、補間処理を行うためのTweenアニメーションクラスです。
+            </p>
+          </div>
+          <h3>🌸作成</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>関数</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  game.Tween(object: any, tweenDataTable: table, duration:
+                  number)
+                </td>
+                <td>Tween</td>
+                <td>
+                  Tweenアニメーションを作成します<br />
+                  ※指定したオブジェクトのプロパティを一定時間かけて変化させます<br />
+                  ※object: 対象オブジェクト<br />
+                  ※tweenDataTable:
+                  Tween可能なフィールド名をキーとし、目標値を値としたテーブル<br />
+                  ※duration: 継続時間を指定します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸メソッド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tween:SetEase(easeType: EaseType)</td>
+                <td>Tween</td>
+                <td>変化の仕方を設定し、現在のインスタンスを返します</td>
+              </tr>
+              <tr>
+                <td>Tween:SetRelative(relative: boolean)</td>
+                <td>Tween</td>
+                <td>
+                  tweenDataTableにおける目標値の解釈方法を設定します<br />
+                  ※true: 絶対値<br />
+                  ※false: 現在の値からの相対的な増量
+                </td>
+              </tr>
+              <tr>
+                <td>Tween:Play()</td>
+                <td>Tween</td>
+                <td>再生し、現在のインスタンスを返します</td>
+              </tr>
+              <tr>
+                <td>Tween:Pause()</td>
+                <td>－</td>
+                <td>一時停止します</td>
+              </tr>
+              <tr>
+                <td>Tween:Resume()</td>
+                <td>－</td>
+                <td>一時停止した位置から再開します</td>
+              </tr>
+              <tr>
+                <td>Tween:Restart()</td>
+                <td>－</td>
+                <td>初期状態に戻り、最初から再生します</td>
+              </tr>
+              <tr>
+                <td>Tween:Complete()</td>
+                <td>－</td>
+                <td>終了します</td>
+              </tr>
+              <tr>
+                <td>Tween:Kill(complete: boolean)</td>
+                <td>－</td>
+                <td>
+                  インスタンスを破棄します<br />
+                  ※true: 完了のコールバックを呼び出します<br />
+                  ※false: 完了のコールバックを呼び出しません
+                </td>
+              </tr>
+              <tr>
+                <td>Tween:SetOnComplete(onComplete: fun())</td>
+                <td>Tween</td>
+                <td>
+                  すべてのループが完了した後のコールバックを設定し、
+                  現在のインスタンスを返します
+                </td>
+              </tr>
+              <tr>
+                <td>Tween:SetOnStepComplete(onStepComplete: fun())</td>
+                <td>Tween</td>
+                <td>
+                  ステップ完了時のコールバックを設定し、
+                  現在のインスタンスを返します
+                </td>
+              </tr>
+              <tr>
+                <td>Tween:SetLoops(times: integer)</td>
+                <td>Tween</td>
+                <td>
+                  ループ回数を設定し、現在のインスタンスを返します<br />
+                  ※無限ループの場合は、負の数を設定します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

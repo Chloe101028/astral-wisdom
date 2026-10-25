@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐ClientUIGridScrollerControl</h2>
+
+          <h3>🌸フィールド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>フィールド名</th>
+                <th>型</th>
+                <th>アクセス</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>itemCount</td>
+                <td>integer</td>
+                <td>読み取り専用</td>
+                <td>アイテムの数</td>
+              </tr>
+              <tr>
+                <td>itemPrefabIndex</td>
+                <td>integer</td>
+                <td>読み書き可能</td>
+                <td>モジュールテンプレートのインデックス</td>
+              </tr>
+              <tr>
+                <td>raycastTarget</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>ポインターのレイキャストで検出可能かどうか</td>
+              </tr>
+              <tr>
+                <td>showScrollBar</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>スクロール可能かどうか</td>
+              </tr>
+              <tr>
+                <td>interactable</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>スクロールバーを表示するかどうか</td>
+              </tr>
+              <tr>
+                <td>scrollDirection</td>
+                <td>ScrollDirection</td>
+                <td>読み取り専用</td>
+                <td>スクロール方向</td>
+              </tr>
+              <tr>
+                <td>layoutConstraint</td>
+                <td>ScrollLayoutConstraint</td>
+                <td>読み取り専用</td>
+                <td>配列制限</td>
+              </tr>
+              <tr>
+                <td>layoutConstraintFixedCount</td>
+                <td>number</td>
+                <td>読み取り専用</td>
+                <td>固定列数の時の列数</td>
+              </tr>
+              <tr>
+                <td>scrollProgress</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  スクロール進行度<br />
+                  ※Tween可能
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸メソッド</h3>
+          <br />
+          リスト項目のインデックスは、実行時に渡されるindexを基準とします。
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RefreshItems(itemCount, refreshCallback)</td>
+                <td>－</td>
+                <td>
+                  リスト項目を更新し、項目ごとにコールバックを呼び出します<br />
+                  更新コールバックの形式は fun(control: ClientUIBaseControl,
+                  index: integer)
+                  で、引数は順に「現在のリスト項目コントロール」と
+                  「リスト項目のインデックス」です
+                </td>
+              </tr>
+              <tr>
+                <td>GetItemIndex(control)</td>
+                <td>integer</td>
+                <td>リスト項目のインデックスを取得します。</td>
+              </tr>
+              <tr>
+                <td>GetItemSize()</td>
+                <td>x, y: number</td>
+                <td>リスト項目の幅と高さを取得します</td>
+              </tr>
+              <tr>
+                <td>GetItemSpacing()</td>
+                <td>x, y: number</td>
+                <td>リスト項目の水平方向および垂直方向の間隔を取得します</td>
+              </tr>
+              <tr>
+                <td>GetPadding()</td>
+                <td>top, bottom, left, right: number</td>
+                <td>コンテンツエリアの上、下、左、右の余白を取得します</td>
+              </tr>
+              <tr>
+                <td>ScrollToItemAt(index, scrollAlignType)</td>
+                <td>－</td>
+                <td>
+                  index の項目へスクロールし、 scrollAlignType
+                  に基づいて整列させます
+                </td>
+              </tr>
+              <tr>
+                <td>GetContentLength()</td>
+                <td>number</td>
+                <td>
+                  スクロール方向におけるスクロールコンテンツの長さを取得します
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

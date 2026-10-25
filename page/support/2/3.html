@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <br />
+      <!--記事開始-->
+      <section class="section">
+        <h2>3.クライアントスクリプトを軽く動かしてみる</h2>
+        <div class="article-meta">投稿日: 2026.10.18</div>
+      </section>
+
+      <section class="section">
+        <div class="content-box">
+          <p>
+            ここでは、いくつかのAPIを使用してみて、クライアントスクリプトではこういうことができるんだよというのを紹介します。<br /><br />
+            私がクライアントスクリプトを動かすまでに四苦八苦した流れを載せるので、結論ドーンいうわけではないことをご理解ください。<br />
+            ここで作成したLuaファイルは、ダウンロードできるようにしておくので良ければ中身を見てみてください。
+          </p>
+        </div>
+
+        <div class="card-list">
+          <a href="download/test.zip" class="card" download="test.zip">
+            <h3>test.zip</h3>
+            <p>この記事で作成したLuaファイルです。</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>⭐UIを作ってみる</h2>
+        まず、何もない状態でいきなりUIをスクリプトで作るのは難しいので、UIの完成形を星々の幻境エディタの方で作ってみます。<br /><br />
+        <img src="img/33.png" />
+        <br /><br />
+        この、「こんにちは、にゃんこです」と喋ってる猫をスクリプトで作ります。<br /><br />
+        <img src="img/34.png" /><br /><br />
+        UI作成のファンクションを呼び出し、そこににゃんこの画像の設定をしてみました。<br />
+        このファンクションは、スクリプトが有効になった時に呼び出されます。<br /><br />
+        <img src="img/35.png" /><br /><br />
+        この状態で動かしてみると、エラーがでました。<br />
+        ローカル変数「cat」が空ですよと言われています。<br /><br />
+        私は何もない状態からUIコントロールを作成できると思っていたのですが、<br />
+        おそらくクライアントスクリプトは先に作成しておいたUIコントロールを後から編集できますよってことなんだと思います。<br /><br />
+        というわけで、先にクライアントモジュールのテンプレートを作成しておきます。<br /><br />
+        <img src="img/36.png" /><br /><br />
+        この画像テンプレートを作成→編集という形でやってみたいと思います。
+        <div class="content-box">
+          <p>
+            画像テンプレートのインデックス：1073741860<br />
+            テキストボックステンプレートのインデックス：1073741862
+          </p>
+        </div>
+        「game.InstantiateClientUIControl(controlPrefabIndex: integer, parent:
+        ClientUIBaseControl)」というAPIがあります。<br />
+        これは、指定したテンプレートインデックスから親UIコントロールの下にUIを作成するAPIです。<br /><br />
+        先ほど作成したテンプレートをさっそく作成してみます。<br />
+        親コントロールはどうやって取得するのかですが、「script.object」を日誌で見てみたところスクリプトが紐づけられているUIコントロールが返ってきたのでこれを使用します。<br /><br />
+        <img src="img/37.png" /><br /><br />
+        これで動くか試してみます。<br /><br />
+        <img src="img/38.png" /><br /><br />
+        <p style="color: tomato">
+          なんと、OnEnable()の中では、InstantiateClientUIControlは呼べないようです。
+        </p>
+        というわけでは、OnEnable()をOnStart()に書き換えて再度動かしてみます。<br /><br />
+        <video controls width="800">
+          <source src="video/1.mp4" type="video/mp4" /></video
+        ><br /><br />
+        画像が出ました！<br />
+        まだ何も設定していない状態なので、「？」が表示されているのは正常な状態です。<br /><br />
+        <img src="img/39.png" /><br /><br />
+        にゃんこの画像を設定してみます。<br /><br />
+        <video controls width="800">
+          <source src="video/2.mp4" type="video/mp4" /></video
+        ><br /><br />
+        どこかにいなくなってしまいました……
+        <div class="content-box">
+          <p>
+            SetAnchoredPosition(x, y)<br /><br />
+
+            親階層がない場合はキャンバスの左下を原点として位置を設定し、親階層がある場合は親階層の中心からの相対オフセットを設定します
+          </p>
+        </div>
+        原因はこれですね。<br />
+        親階層がある場合は、親階層の中心から相対オフセットを設定。<br /><br />
+        <img src="img/40.png" /><br /><br />
+        というわけで、カスタムボタンをクライアントモジュールコンテナのサイズに広げて、その中ににゃんこたちの画像を作成しました。<br /><br />
+
+        ここで確認できた相対オフセットや他の情報を設定します。<br /><br />
+        <img src="img/41.png" /><br /><br />
+        にゃんこ、プレート、テキストボックスすべて設定してきました。<br />
+        これで動かしてみましょう。<br /><br />
+        <video controls width="800">
+          <source src="video/3.mp4" type="video/mp4" /></video
+        ><br /><br />
+        というわけで、なんとかUIを作成することができました。
+      </section>
+
+      <section class="section">
+        <h2>⭐カスタム変数を取得してみる</h2>
+        <section class="section">
+          先ほどのにゃんこのUIを少し変えてみます。<br />
+          次に作るUIの完成はこんな感じです。<br /><br />
+          <img src="img/42.png" /><br /><br />
+          テキストボックスの中身を変更します。<br />
+          計算式は、今はベタ書きされていますが、カスタム変数A × カスタム変数B
+          の値を計算し、UIに表示します。<br /><br />
+          <img src="img/43.png" /><br /><br />
+          なので、今回変更するのはこの部分になりますね。<br /><br />
+          <img src="img/44.png" /><br /><br />
+          計算に使う2つのカスタム変数を星々の幻境エディタ側に作成しておきます。<br />
+          今回はプレイヤーエンティティに作成しました。<br /><br />
+          <img src="img/45.png" /><br /><br />
+          カスタム変数の中身は、オプションタブを押した時に更新されるようにします。<br />
+          ※これはサーバーノードグラフの方で編集<br /><br />
+
+          星々の幻境エディタ側の準備ができたので、VSCodeの方に移ります。<br /><br />
+
+          「game.GetGlobalCustomVariableValue(entityType:
+          CustomVariableEntityType, customVariableName:
+          string)」というAPIがあります。<br />
+          カスタム変数を取得する時にはこれを使用します。<br /><br />
+          <img src="img/46.png" /><br /><br />
+          カスタム変数をそれぞれ取得し、取得した値を掛け算します。<br />
+          その後は、「..」で文字列の結合をしてテキスト内容を完成させます。<br />
+          ※tostring()は文字列に型変換をしています。<br /><br />
+          <p style="color: tomato">
+            ※今までは、変数をUI上で横に並べることで文字列を結合しているように見せかけることしかできませんでしたが、クライアントスクリプトの導入で実際に文字列結合ができるようになりました！
+          </p>
+          <br />
+          これで動かしてみましょう。<br /><br />
+          <video controls width="800">
+            <source src="video/4.mp4" type="video/mp4" /></video
+          ><br /><br />
+          思ったような形になっていますね。<br /><br />
+
+          今のままでは、計算処理は、コンテナノードが起動された1回しか動きません。<br />
+          これを数値更新が行われる度にUIの中身も変更されるように修正してみましょう。<br /><br />
+          <img src="img/47.png" /><br /><br />
+          今回の計算処理～文字列結合する処理は、複数回呼ばれることになるのでその部分を関数として切り出しておきます。<br /><br />
+
+          何回も使用する処理を関数にしておくことで、同じ処理を何度も書く必要がなくなります。<br />
+          そうすることで、コードの可読性をあげたり、コードを修正する際の修正漏れを防いだりと様々なメリットがあります。<br />
+          これは、複合ノードと同じです。<br /><br />
+
+          サーバーノードに「カスタム変数が変化した時」というイベントノードがあります。<br />
+          クライアントスクリプトでは、<br />「script:RegisterCustomVariableChangedHandler(entityType:
+          CustomVariableEntityType, customVariableName: string, callback:
+          fun(entityType: CustomVariableEntityType, customVariableName:
+          string))」<br />というAPIがそれにあたります。<br /><br />
+          <img src="img/48.png" /><br /><br />
+          カスタム変数の監視を登録しました。<br /><br />
+
+          これで、「数字2」が変更される度に計算処理が動くようになりました。<br />
+          星々の幻境でテストしてみましょう。<br /><br />
+          <video controls width="800">
+            <source src="video/5.mp4" type="video/mp4" /></video
+          ><br /><br />
+          思った通りの動きになっていますね。
+        </section>
+      </section>
+
+      <section class="section">
+        <h2>⭐アニメーションを作ってみる</h2>
+        <section class="section">
+          <img src="img/49.png" /><br /><br />
+          場面が切り替わる時に黒いスクリーンがクルクルするやつを作ってみようと思います。<br /><br />
+
+          マスク設定で360度円軌道で、進捗を動かすことでいい感じにできると思います。
+          <div class="content-box">
+            game.Tween(object: any, tweenDataTable: table, duration: number)<br /><br />
+            Tweenアニメーションを作成します<br />
+            ※指定したオブジェクトのプロパティを一定時間かけて変化させます<br />
+            ※object:対象オブジェクト<br />
+            ※tweenDataTable:Tween可能なフィールド名をキーとし目標値を値としたテーブル<br />
+            ※duration:継続時間を引数にします
+          </div>
+          おそらくこれを使用するんだと思います。<br /><br />
+          tweenDataTableを作ってみます。<br />
+          進捗がTween可能なので、「fillAmount」をキーとします。<br /><br />
+          <img src="img/50.png" /><br /><br />
+          これで動かしてみましょう。<br /><br />
+          <video controls width="800">
+            <source src="video/6.mp4" type="video/mp4" /></video
+          ><br /><br />
+          動いてはいそうですが、めちゃくちゃ爆速ですね。<br />
+          5秒のつもりで設定していたのですが、そうではないようです。<br /><br />
+
+          5→100に変更してみました。<br /><br />
+          <video controls width="800">
+            <source src="video/7.mp4" type="video/mp4" /></video
+          ><br /><br />
+          いい感じのスピードですね。<br /><br />
+
+          進捗が100になったら、黒いスクリーンが徐々に開けていくアニメーションを作成します。<br />
+          マスクエリアを反転することで、やりたいことができると思います。<br /><br />
+          <img src="img/51.png" /><br /><br />
+          無限ループを設定し、ステップ完了時にマスク反転を反転することで黒くなって→明るくなってが繰り返し行われるようにしてみました。<br /><br />
+          <video controls width="800">
+            <source src="video/8.mp4" type="video/mp4" /></video
+          ><br /><br />
+          動きませんね…<br />
+          ログ出力にも出ていないので、そもそもループが完了していないみたいです。<br /><br />
+
+          あれこれ、動かしてみて100に変更した部分を5にしてみると、しばらくすると画面が開けました。<br />
+          ということは、5秒であっていたのでしょうか。<br />
+          問題の部分はループ部分ではなく、爆速でアニメーションが過ぎていくところなのかもしれません。<br /><br />
+          <img src="img/52.png" /><br /><br />
+          はい、というわけで原因がわかりました。<br />
+          進捗に設定していた数値が問題でした。<br /><br />
+          <p style="color: tomato">※進捗は、0～100ではなく、0～1のようです。</p>
+          <br />
+          <video controls width="800">
+            <source src="video/9.mp4" type="video/mp4" /></video
+          ><br /><br />
+          ようやく思っていたものができました。<br />
+          私が今回作成したアニメーションは非常にシンプルなものですが、凝りだせばもっと素敵なアニメーションが作れると思いますので皆さんも挑戦してみてくださいね。
+        </section>
+      </section>
+    </main>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../../js/style.js"></script>
+  </body>
+</html>

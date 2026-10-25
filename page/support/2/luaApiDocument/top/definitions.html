@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐用語の定義</h2>
+          <div class="content-box">
+            API特有の用語について、日本語と英語の対応関係を定義します。<br />
+            ※ここに記載されている名称は、実際のインターフェース名やフィールド名ではありません。<br />
+            ※Ver7.1時点での日本語名称との紐づけであり、日本語名称が変更になっている可能性もありますのでご注意ください。
+          </div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>日本語</th>
+                <th>英語表記</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>スクリプト</td>
+                <td>Script</td>
+              </tr>
+              <tr>
+                <td>信号</td>
+                <td>ServerSignal</td>
+              </tr>
+              <tr>
+                <td>カスタム変数</td>
+                <td>CustomVariable</td>
+              </tr>
+              <tr>
+                <td>パラメータ</td>
+                <td>Param</td>
+              </tr>
+              <tr>
+                <td>Tween</td>
+                <td>Tween</td>
+              </tr>
+              <tr>
+                <td>塗りつぶし</td>
+                <td>fillAmount</td>
+              </tr>
+              <tr>
+                <td>基礎</td>
+                <td>Basic</td>
+              </tr>
+              <tr>
+                <td>伸縮</td>
+                <td>Stretch</td>
+              </tr>
+              <tr>
+                <td>ぼかし</td>
+                <td>soft edge</td>
+              </tr>
+              <tr>
+                <td>90度円軌道</td>
+                <td>Radial90</td>
+              </tr>
+              <tr>
+                <td>180度円軌道</td>
+                <td>Radial180</td>
+              </tr>
+              <tr>
+                <td>360度円軌道</td>
+                <td>Radial360</td>
+              </tr>
+              <tr>
+                <td>クライアントコントロールID</td>
+                <td>ClientControlID</td>
+              </tr>
+              <tr>
+                <td>クライアントコントロールIDリスト</td>
+                <td>ClientControlIDList</td>
+              </tr>
+              <tr>
+                <td>ステージ時間停止</td>
+                <td>LevelTimePaused</td>
+              </tr>
+              <tr>
+                <td>コンテナノード</td>
+                <td>ContainerControl</td>
+              </tr>
+              <tr>
+                <td>テキストボックス</td>
+                <td>TextBoxControl</td>
+              </tr>
+              <tr>
+                <td>テキストウィンドウ</td>
+                <td>TextWindowControl</td>
+              </tr>
+              <tr>
+                <td>画像</td>
+                <td>ImageControl</td>
+              </tr>
+              <tr>
+                <td>画面エフェクト</td>
+                <td>UIAnimationControl</td>
+              </tr>
+              <tr>
+                <td>フルスクリーンエフェクト</td>
+                <td>FullscreenUIAnimationControl</td>
+              </tr>
+              <tr>
+                <td>ボタンヒント</td>
+                <td>KeyHintControl</td>
+              </tr>
+              <tr>
+                <td>グリッドウィンドウ</td>
+                <td>GridScrollerControl</td>
+              </tr>
+              <tr>
+                <td>ポインター検出エリア</td>
+                <td>CursorEventArea</td>
+              </tr>
+              <tr>
+                <td>テンプレート参照モジュール</td>
+                <td>ReferenceControl</td>
+              </tr>
+              <tr>
+                <td>プリセットボタン</td>
+                <td>PresetButton</td>
+              </tr>
+              <tr>
+                <td>存在(作成済みかどうか)</td>
+                <td>alive</td>
+              </tr>
+              <tr>
+                <td>有効</td>
+                <td>enable</td>
+              </tr>
+              <tr>
+                <td>アクティブ</td>
+                <td>active</td>
+              </tr>
+              <tr>
+                <td>表示</td>
+                <td>visible</td>
+              </tr>
+              <tr>
+                <td>コントローラーナビゲーションを隔離</td>
+                <td>IsolateNavigation</td>
+              </tr>
+              <tr>
+                <td>ボタンイベントの貫通をブロック</td>
+                <td>disableKeyEventPassthrough</td>
+              </tr>
+              <tr>
+                <td>エリア内のポインターイベントの貫通をブロック</td>
+                <td>disableCursorEventPassthrough</td>
+              </tr>
+              <tr>
+                <td>ポインターを常時表示</td>
+                <td>showCursor</td>
+              </tr>
+              <tr>
+                <td>ポインターのレイキャストで検出可能</td>
+                <td>Raycast Target</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

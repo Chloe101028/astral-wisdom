@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <br />
+      <!--記事開始-->
+      <section class="section">
+        <h2>Luaを使ってみた</h2>
+      </section>
+
+      <section class="section">
+        <div class="content-box">
+          <p>
+            バージョン7.1でクライアントモジュール、クライアントスクリプトが追加されました。
+          </p>
+          <br />
+          <p>
+            クライアントスクリプトでクライアントモジュールを制御することによって、UIインタラクションの最適化、スムーズなアニメーション効果の実現、2Dゲームプレイの制作などが可能になるらしいです。<br />
+            バージョン7.1に入って先行組が2Dゲームを投稿していますがすごいですね。<br />
+            浮遊インタラクションが登場した時にも幻境制作に革命が起きたなぁと思いましたが、今回のアップデートでさらに幻境のステージに幅が広がりますね。
+          </p>
+          <br />
+          <p>
+            私は英語ができないので、いつも幻境制作のガイドを読むのには苦労してるんですけど、今回は今までの比じゃないですね。<br />
+            そもそもほとんど書いてないんです。<br />
+            クライアントスクリプトはLuaというプログラミング言語を使用するんですけど、幻境のガイドを読み漁っても何から始めたらいいのか全くわからなくて…
+            <br />とりあえず、手探りで色々やってみようと思います。
+          </p>
+          <br />
+          <p>
+            私のプログラミング経験ですが、言語は違いますが、お仕事としてプログラミングをしているので、全くの素人ではありません。<br />
+            基本的にプログラミング言語は、どれも似たようなものなので、完成されたソースコードを読むことはできます。<br />
+            ただ、言語が異なると微妙に関数や書き方が違ったりするので、書くことについては初心者に毛が生えたものだと思ってください。
+          </p>
+          <br />
+          <p>このカテゴリーには、私がLuaを使ってみた記録を残しておきます。</p>
+          <br />
+          <p style="color: tomato">
+            <b>
+              ※なお英語がわかる方は、海外の方が公開しているドキュメントを見たほうが絶対にいいです！<br />
+              　ドキュメントだけでなく、便利そうな拡張機能も公開してました。</b
+            >
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="content-box">
+          <p>
+            そもそもガイドに使用できるAPIも何も書いてないので、困り果てていたのですが、mihoyo.comのガイドDiscordサーバーで共有してくださっている方いました。<br />
+            日本語に翻訳しましたが、原文を見たい方は以下のリンクから閲覧できます。<br /><br />
+            <a href="https://act.mihoyo.com/ys/ugc/tutorial/detail/mhtakr07vej4"
+              >公式幻境制作ガイド(中国版)</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="content-box">
+          <p>
+            Lua講座という幻境ステージが投稿されていました。<br />
+            GUID: 64560938976
+            <br />
+            <br />これまでプログラミングについて全く触れたことのない方は遊んでみるといいかもしれません。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>⭐APIドキュメント</h2>
+        <section class="section">
+          <div class="card-list">
+            <a href="luaApiDocument/index.html" class="card">
+              <h3>ローカルUIコントロール APIドキュメント</h3>
+              <p>星々の幻境用のAPIをまとめた記事です。</p>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <section class="section">
+        <h2>⭐Luaを使ってみよう</h2>
+        <section class="section">
+          <div class="card-list">
+            <a href="1.html" class="card">
+              <h3>1.環境を整える</h3>
+              <p>Luaのソースコードを快適に編集するための環境作成の記事です。</p>
+            </a>
+          </div>
+          <br />
+          <div class="card-list">
+            <a href="2.html" class="card">
+              <h3>2.星々の幻境でクライアントスクリプトを動かしてみる</h3>
+              <p>
+                Luaスクリプトと星々の幻境を接続するまでの流れを記載した記事です。
+              </p>
+            </a>
+          </div>
+          <br />
+          <div class="card-list">
+            <a href="3.html" class="card">
+              <h3>3.クライアントスクリプトを軽く動かしてみる</h3>
+              <p>APIをいくつか使ってみた記事です。</p>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <!--スタブ配布-->
+      <section class="section">
+        <h2>⭐補完用スタブの配布</h2>
+        <section class="section">
+          <div class="content-box">
+            <p>
+              コードエディタで開発する際に、星々の幻境の独自APIを補完するためのスタブを作成しました。<br />
+              ダウンロードしたら、「はじめに読んでください.txt」を必ず読んでください。
+            </p>
+          </div>
+          <div class="card-list">
+            <a
+              href="download/stubs_v1_0_0.zip"
+              class="card"
+              download="stubs_v1_0_0.zip"
+            >
+              <h3>stubs_v1_0_0.zip</h3>
+              <p>Ver7.1で追加されたAPIの補完用スタブです。</p>
+            </a>
+          </div>
+        </section>
+
+        <h3>🌸スタブファイルの配置</h3>
+        <br />
+        <li><b>(1) 画面のリンクを押す</b></li>
+        <img src="img/53.png" style="width: 1000px" /><br />
+        <li><b>(2) ダウンロードしたzipファイルを展開する</b></li>
+        <img src="img/54.png" /><br /><br />
+        <li><b>(3) 展開したフォルダを作業用フォルダに移動させる</b></li>
+        <img src="img/55.png" /><br /><br />
+        <li><b>(4) VSCodeから移動させたフォルダが見えているか確認する</b></li>
+        <img src="img/56.png" /><br /><br /><br />
+
+        <h3>🌸スタブファイルの利用</h3>
+        <br />
+        <img src="img/57.png" /><br /><br />
+        例えば、ローカル変数「param」にスクリプト変数の値を代入しようとしたとき、<br />
+        途中まで入力したところで、「Ctrl +
+        Space」を押すことで、API一覧を表示して開発の手助けをしてくれます。<br /><br />
+        <img src="img/58.png" /><br /><br />
+        Enum定義なんかも登録してあります。<br /><br />
+
+        APIには日本語でコメントを入れていますので、APIドキュメントからAPIの内容を探す手間が省けます。<br /><br />
+        <img src="img/59.png" /><br /><br />
+        また、関数の型定義がしてあるので、間違った型を引数に入れているとエラーを出して教えてくれるようになります。<br /><br />
+        <p style="color: tomato">
+          注意事項にも記載していますが、これはあくまでも補完用のスタブであり、実際の処理と異なる点には留意してください。<br />
+          また、これらのスタブファイルを星々の幻境のクライアントスクリプトにマッピングすることもやめてください。
+        </p>
+        <br /><br />
+
+        <h3>🌸スタブファイルを使う際の注意点</h3>
+        <div class="content-box">
+          <p>
+            一部のAPIでは、実行時に派生クラス(ClientUIImageControl、ClientUITextBoxControl等)を返却しますが、このスタブでは返却される型を自動で判定することができません。<br />
+            ※補完機能を使用したい場合は、キャストすることで後続の処理の補完に影響が出ないようになります。
+          </p>
+        </div>
+        <img src="img/60.png" /><br /><br />
+        この例だと、catに代入される型は、スタブ上ではClientUIBaseControlになりますが、<br />
+        実際に返却されるのは、ClientUIImageControl(1073741860が画像コントロール)であるため、キャストすることによって後続の処理に影響が出ないようにしています。
+      </section>
+    </main>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../../js/style.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐列挙型システム</h2>
+          <h3>🌸Enum.EaseType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>Linear</td>
+                <td>リニア</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InSine</td>
+                <td>イーズイン</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutSine</td>
+                <td>イーズアウト</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutSine</td>
+                <td>イーズインアウト</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InQuad</td>
+                <td>イーズイン(Sineより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutQuad</td>
+                <td>イーズアウト(Sineより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutQuad</td>
+                <td>イーズインアウト(Sineより強い)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InCubic</td>
+                <td>イーズイン(Quadより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutCubic</td>
+                <td>イーズアウト(Quadより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutCubic</td>
+                <td>イーズインアウト(Quadより強い)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InQuart</td>
+                <td>イーズイン(Cubicより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutQuart</td>
+                <td>イーズアウト(Cubicより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutQuart</td>
+                <td>イーズインアウト(Cubicより強い)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InQuint</td>
+                <td>イーズイン(Quartより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutQuint</td>
+                <td>イーズアウト(Quartより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutQuint</td>
+                <td>イーズインアウト(Quartより強い)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InExpo</td>
+                <td>イーズイン(Quintより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutExpo</td>
+                <td>イーズアウト(Quintより強い)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutExpo</td>
+                <td>イーズインアウト(Quintより強い)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InCirc</td>
+                <td>イーズイン(Expoより加速や減速がゆるやか)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutCirc</td>
+                <td>イーズアウト(Expoより加速や減速がゆるやか)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutCirc</td>
+                <td>イーズインアウト(Expoより加速や減速がゆるやか)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InBack</td>
+                <td>イーズイン(少し行き過ぎてから戻ってくる)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutBack</td>
+                <td>イーズアウト(少し行き過ぎてから戻ってくる)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutBack</td>
+                <td>イーズインアウト(少し行き過ぎてから戻ってくる)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InElastic</td>
+                <td>イーズイン(ゴムのような動き)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutElastic</td>
+                <td>イーズアウト(ゴムのような動き)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutElastic</td>
+                <td>イーズインアウト(ゴムのような動き)</td>
+              </tr>
+
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InBounce</td>
+                <td>イーズイン(ボールのような動き)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>OutBounce</td>
+                <td>イーズアウト(ボールのような動き)</td>
+              </tr>
+              <tr>
+                <td>Enum.EaseType</td>
+                <td>InOutBounce</td>
+                <td>イーズインアウト(ボールのような動き)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.CustomVariableEntityType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.CustomVariableEntityType</td>
+                <td>Level</td>
+                <td>ステージ</td>
+              </tr>
+              <tr>
+                <td>Enum.CustomVariableEntityType</td>
+                <td>PlayerSelf</td>
+                <td>プレイヤー自身</td>
+              </tr>
+              <tr>
+                <td>Enum.CustomVariableEntityType</td>
+                <td>AvatarSelf</td>
+                <td>キャラ自身</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.Device</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.Device</td>
+                <td>KeyboardAndMouse</td>
+                <td>キーボード＆マウス</td>
+              </tr>
+              <tr>
+                <td>Enum.Device</td>
+                <td>Mobile</td>
+                <td>モバイルタッチパネル</td>
+              </tr>
+              <tr>
+                <td>Enum.Device</td>
+                <td>Controller</td>
+                <td>コンソールコントローラー</td>
+              </tr>
+              <tr>
+                <td>Enum.Device</td>
+                <td>MobileController</td>
+                <td>モバイル用コントローラー</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.StageMode</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.StageMode</td>
+                <td>Beyond</td>
+                <td>アドバンスモード</td>
+              </tr>
+              <tr>
+                <td>Enum.StageMode</td>
+                <td>Classic</td>
+                <td>クラシックモード</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.LanguageType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageNone</td>
+                <td>未設定</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageEng</td>
+                <td>英語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageChs</td>
+                <td>簡体字中国語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageCht</td>
+                <td>繁体字中国語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageFra</td>
+                <td>フランス語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageDeu</td>
+                <td>ドイツ語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageSpa</td>
+                <td>スペイン語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguagePor</td>
+                <td>ポルトガル語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageRus</td>
+                <td>ロシア語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageJpn</td>
+                <td>日本語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageKor</td>
+                <td>韓国語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageTha</td>
+                <td>タイ語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageVie</td>
+                <td>ベトナム語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageInd</td>
+                <td>インドネシア語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageTur</td>
+                <td>トルコ語</td>
+              </tr>
+              <tr>
+                <td>Enum.LanguageType</td>
+                <td>LanguageIta</td>
+                <td>イタリア語</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ParamType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Entity</td>
+                <td>エンティティ</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>EntityList</td>
+                <td>エンティティリスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Int</td>
+                <td>整数</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>IntList</td>
+                <td>整数リスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Bool</td>
+                <td>ブール値</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>BoolList</td>
+                <td>ブール値リスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Float</td>
+                <td>浮動小数点数</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>FloatList</td>
+                <td>浮動小数点数リスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>String</td>
+                <td>文字列</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>StringList</td>
+                <td>文字列リスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Vector3</td>
+                <td>3Dベクトル</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Vector3List</td>
+                <td>3Dベクトルリスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>Guid</td>
+                <td>GUID</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>GuidList</td>
+                <td>GUIDリスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>ConfigId</td>
+                <td>配置ID</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>PrefabId</td>
+                <td>プレハブID</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>ConfigIdList</td>
+                <td>配置IDリスト</td>
+              </tr>
+              <tr>
+                <td>Enum.ParamType</td>
+                <td>PrefabIdList</td>
+                <td>プレハブIDリスト</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.CursorEventType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorDown</td>
+                <td>カーソルを押した時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorUp</td>
+                <td>カーソルを離した時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorEnter</td>
+                <td>カーソルが検知エリアに入った時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorExit</td>
+                <td>カーソルが検知エリアから外れた時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorDrag</td>
+                <td>カーソルをドラッグ中</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorBeginDrag</td>
+                <td>ドラッグ開始時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorEndDrag</td>
+                <td>ドラッグ終了時</td>
+              </tr>
+              <tr>
+                <td>Enum.CursorEventType</td>
+                <td>CursorClick</td>
+                <td>クリック完了時</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ScrollDirection</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ScrollDirection</td>
+                <td>Horizontal</td>
+                <td>水平スクロール</td>
+              </tr>
+              <tr>
+                <td>Enum.ScrollDirection</td>
+                <td>Vertical</td>
+                <td>垂直スクロール</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ScrollLayoutConstraint</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ScrollLayoutConstraint</td>
+                <td>AutoWrap</td>
+                <td>自動折り返しレイアウト</td>
+              </tr>
+              <tr>
+                <td>Enum.ScrollLayoutConstraint</td>
+                <td>Fixed</td>
+                <td>行数または列数固定レイアウト</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ScrollAlignType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ScrollAlignType</td>
+                <td>Bottom</td>
+                <td>下揃え</td>
+              </tr>
+              <tr>
+                <td>Enum.ScrollAlignType</td>
+                <td>Center</td>
+                <td>中央揃え</td>
+              </tr>
+              <tr>
+                <td>Enum.ScrollAlignType</td>
+                <td>Top</td>
+                <td>上揃え</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ControllerNavigationDir</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ControllerNavigationDir</td>
+                <td>Up</td>
+                <td>上</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationDir</td>
+                <td>Down</td>
+                <td>下</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationDir</td>
+                <td>Left</td>
+                <td>左</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationDir</td>
+                <td>Right</td>
+                <td>右</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ControllerNavigationEventType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>Confirm</td>
+                <td>決定</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>Cancel</td>
+                <td>キャンセル</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>Focus</td>
+                <td>フォーカス</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>LostFocus</td>
+                <td>フォーカスアウト</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>RightStickUp</td>
+                <td>右スティック上</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>RightStickDown</td>
+                <td>右スティック下</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>RightStickRight</td>
+                <td>右スティック右</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>RightStickLeft</td>
+                <td>右スティック左</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>LeftStickUp</td>
+                <td>左スティック上</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>LeftStickDown</td>
+                <td>左スティック下</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>LeftStickRight</td>
+                <td>左スティック右</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationEventType</td>
+                <td>LeftStickLeft</td>
+                <td>左スティック左</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ControllerNavigationMode</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ControllerNavigationMode</td>
+                <td>None</td>
+                <td>ナビゲーションなし</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationMode</td>
+                <td>NearestControl</td>
+                <td>最も近いモジュールへ移動</td>
+              </tr>
+              <tr>
+                <td>Enum.ControllerNavigationMode</td>
+                <td>Specified</td>
+                <td>指定したモジュールへ移動</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.TextHorizontalAlignment</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.TextHorizontalAlignment</td>
+                <td>Left</td>
+                <td>左揃え</td>
+              </tr>
+              <tr>
+                <td>Enum.TextHorizontalAlignment</td>
+                <td>Middle</td>
+                <td>中央揃え(水平方向)</td>
+              </tr>
+              <tr>
+                <td>Enum.TextHorizontalAlignment</td>
+                <td>Right</td>
+                <td>右揃え</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.TextVerticalAlignment</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.TextVerticalAlignment</td>
+                <td>Top</td>
+                <td>上揃え</td>
+              </tr>
+              <tr>
+                <td>Enum.TextVerticalAlignment</td>
+                <td>Middle</td>
+                <td>中央揃え(垂直方向)</td>
+              </tr>
+              <tr>
+                <td>Enum.TextVerticalAlignment</td>
+                <td>Bottom</td>
+                <td>下揃え</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageType</td>
+                <td>Basic</td>
+                <td>基礎</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageType</td>
+                <td>Stretch</td>
+                <td>伸縮</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageSource</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>StaticReference</td>
+                <td>静的参照</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Item</td>
+                <td>アイテム</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Equipment</td>
+                <td>装備</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Skill</td>
+                <td>スキル</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>UnitStatus</td>
+                <td>ユニット状態</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Faction</td>
+                <td>陣営</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Currency</td>
+                <td>通貨</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageSource</td>
+                <td>Prefab</td>
+                <td>プレハブ</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageFillType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Unused</td>
+                <td>進捗に応じた塗りつぶしを使用しない</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Horizontal</td>
+                <td>水平方向</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Vertical</td>
+                <td>垂直方向</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Radial90</td>
+                <td>90度円軌道</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Radial180</td>
+                <td>180度円軌道</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillType</td>
+                <td>Radial360</td>
+                <td>360度円軌道</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageFillHorizontalType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageFillHorizontalType</td>
+                <td>Left</td>
+                <td>左から右</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillHorizontalType</td>
+                <td>Right</td>
+                <td>右から左</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageFillVerticalType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageFillVerticalType</td>
+                <td>Bottom</td>
+                <td>下から上</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillVerticalType</td>
+                <td>Top</td>
+                <td>上から下</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageFillRadial90Type</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageFillRadial90Type</td>
+                <td>BottomLeft</td>
+                <td>左下</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadial90Type</td>
+                <td>TopLeft</td>
+                <td>左上</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadial90Type</td>
+                <td>TopRight</td>
+                <td>右上</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadial90Type</td>
+                <td>BottomRight</td>
+                <td>右下</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageFillRadialType</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageFillRadialType</td>
+                <td>Bottom</td>
+                <td>下</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadialType</td>
+                <td>Left</td>
+                <td>左</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadialType</td>
+                <td>Top</td>
+                <td>上</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageFillRadialType</td>
+                <td>Right</td>
+                <td>右</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.ImageMaskSoftEdgeMode</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.ImageMaskSoftEdgeMode</td>
+                <td>Percentage</td>
+                <td>ぼかしモード：パーセンテージ</td>
+              </tr>
+              <tr>
+                <td>Enum.ImageMaskSoftEdgeMode</td>
+                <td>Pixel</td>
+                <td>ぼかしモード：ピクセル</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸Enum.UIAnimationLayer</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>列挙名</th>
+                <th>列挙値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enum.UIAnimationLayer</td>
+                <td>AboveAllControls</td>
+                <td>全モジュールより上</td>
+              </tr>
+              <tr>
+                <td>Enum.UIAnimationLayer</td>
+                <td>BelowAllControls</td>
+                <td>全モジュールより下</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>

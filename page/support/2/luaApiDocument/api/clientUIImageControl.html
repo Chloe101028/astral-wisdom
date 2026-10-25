@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>⭐ClientUIImageControl</h2>
+          <div class="content-box">
+            画像のカラー、マスク、塗りつぶしの効果を制御します。
+          </div>
+          <h3>🌸フィールド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>フィールド名</th>
+                <th>型</th>
+                <th>アクセス</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>imageSource</td>
+                <td>ImageSource</td>
+                <td>読み取り専用</td>
+                <td>画像ソース</td>
+              </tr>
+              <tr>
+                <td>imageId</td>
+                <td>integer</td>
+                <td>読み取り専用</td>
+                <td>画像ID</td>
+              </tr>
+              <tr>
+                <td>imageColor</td>
+                <td>ColorValue</td>
+                <td>読み書き可能</td>
+                <td>
+                  カラー<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>imageType</td>
+                <td>ImageType</td>
+                <td>読み書き可能</td>
+                <td>画像タイプ</td>
+              </tr>
+              <tr>
+                <td>enableMask</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>マスキングを有効にするかどうか</td>
+              </tr>
+              <tr>
+                <td>enableSoftEdge</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>境界線のぼかしを有効にするかどうか</td>
+              </tr>
+              <tr>
+                <td>softEdgeMode</td>
+                <td>ImageMaskSoftEdgeMode</td>
+                <td>読み書き可能</td>
+                <td>ぼかしモード</td>
+              </tr>
+              <tr>
+                <td>softEdgeWidthX</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  水平方向の境界ぼかし幅<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>softEdgeWidthY</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  垂直方向の境界ぼかし幅<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>horizontalSoftRange</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  横方向エリア範囲<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>verticalSoftRange</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  縦方向エリア範囲<br />
+                  ※Tween可能
+                </td>
+              </tr>
+              <tr>
+                <td>reverseMaskArea</td>
+                <td>boolean</td>
+                <td>読み書き可能</td>
+                <td>マスクエリア反転するかどうか</td>
+              </tr>
+              <tr>
+                <td>fillType</td>
+                <td>ImageFillType</td>
+                <td>読み書き可能</td>
+                <td>塗りつぶしの形状</td>
+              </tr>
+              <tr>
+                <td>fillHorizontalType</td>
+                <td>ImageFillHorizontalType</td>
+                <td>読み書き可能</td>
+                <td>塗りつぶしの方向(横)</td>
+              </tr>
+              <tr>
+                <td>fillVerticalType</td>
+                <td>ImageFillVerticalType</td>
+                <td>読み書き可能</td>
+                <td>塗りつぶしの方向(縦)</td>
+              </tr>
+              <tr>
+                <td>fillRadial90Type</td>
+                <td>ImageFillRadial90Type</td>
+                <td>読み書き可能</td>
+                <td>塗りつぶしの開始位置(90度円軌道)</td>
+              </tr>
+              <tr>
+                <td>fillRadialType</td>
+                <td>ImageFillRadialType</td>
+                <td>読み書き可能</td>
+                <td>塗りつぶしの開始位置(180度,360度円軌道)</td>
+              </tr>
+              <tr>
+                <td>fillAmount</td>
+                <td>number</td>
+                <td>読み書き可能</td>
+                <td>
+                  進捗<br />
+                  ※Tween可能
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section">
+          <h3>🌸メソッド</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>メソッド</th>
+                <th>戻り値</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SetImage(imageSource, imageId)</td>
+                <td>－</td>
+                <td>画像のソースと画像IDを設定する</td>
+              </tr>
+              <tr>
+                <td>SetSoftEdgeWidth(widthX, widthY)</td>
+                <td>－</td>
+                <td>水平方向および垂直方向のぼかし幅を設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillUnused()</td>
+                <td>－</td>
+                <td>塗りつぶしを使用しないように設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillHorizontal(fillHorizontalType, fillAmount)</td>
+                <td>－</td>
+                <td>水平方向の塗りつぶしを設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillVertical(fillVerticalType, fillAmount)</td>
+                <td>－</td>
+                <td>垂直方向の塗りつぶしを設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillRadial90(fillRadial90Type, fillAmount)</td>
+                <td>－</td>
+                <td>90度円軌道の塗りつぶしを設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillRadial180(fillRadialType, fillAmount)</td>
+                <td>－</td>
+                <td>180度円軌道の塗りつぶしを設定する</td>
+              </tr>
+              <tr>
+                <td>SetFillRadial360(fillRadialType, fillAmount)</td>
+                <td>－</td>
+                <td>360度円軌道の塗りつぶしを設定する</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("/page/support/2/luaApiDocument/menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>
