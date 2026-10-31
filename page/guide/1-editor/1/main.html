@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.システムメニュー</a>
+      <a href="#2">2.アセットバー</a>
+      <a href="#3">3.クイック設定</a>
+      <a href="#4">4.詳細パネル</a>
+      <a href="#5">5.モード切替</a>
+      <a href="#6">6.カメラ操作</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>メインインターフェース</h2>
+          <section class="hero-image">
+            <img src="img/1.png" />
+          </section>
+        </section>
+
+        <!--1.システムメニュー-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.システムメニュー</h2>
+
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          左上のメニューアイコンをクリックするとシステムメニューを開閉できます。<br />
+          Escキーでも切り替え可能です。<br /><br />
+
+          <h3>🌸1.システムメニュー機能</h3>
+          <div class="content-box">
+            <p>システムメニューでは以下の機能を利用できます。</p>
+            <br />
+            <li>
+              現在の進行状況を保存、セーブデータ一覧を開く、ステージをアップロード、星々の箱庭を開く、セーブデータを閉じる
+            </li>
+            <li>
+              ステージ設定、UIコントロールグループ管理、メインカメラ管理、テストプレイ、マルチプレイテスト、外部システム管理、通過とバッグ、幻境の箱管理
+            </li>
+            <li>
+              キャラクタープレビュー管理、タイマー管理、ステージ変数管理、
+              プリセットポイント管理、スキルリソース管理、BGM管理、
+              アセットのインポート／エクスポート、装備データ管理、
+              ショップテンプレート管理、アドバンスデータ管理、ステージ内データ管理、
+              テストプレイのデータ管理、実体配置グループ管理、
+              ユニットタグ管理、シールド管理、スキャンタグ管理、パス管理、
+              多言語テキスト管理、光源管理、ボイスとテキストチャット管理、
+              ショートカットキー一覧、シーン生成テンプレート管理、スキル変数管理、リスクチェック、幻境任務
+            </li>
+            <li>クリエイターレベルの確認、クリエイター権限の確認</li>
+          </div>
+
+          <h3>🌸2.最小化</h3>
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          システムメニューから開いた画面は上部バーへ折りたたまれます。<br />
+          対応する機能をクリックすると再度開けます。
+        </section>
+
+        <!--2.アセットバー-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.アセットバー</h2>
+
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          左上のアセットバーアイコンで表示・非表示を切り替えられます。<br />
+          編集モードによって内容が変化し、通常は「カスタム」と「プリセット」が含まれます。<br />
+          プリセット項目は直接編集できないため、カスタムとして保存してから編集します。
+
+          <div class="content-box">
+            <p>主な機能</p>
+            <br />
+            <li><b>検索</b>：現在のタブ内を検索</li>
+            <li><b>未分類タブ</b>：初期状態のタブ</li>
+            <li>
+              <b>カスタムタブ管理</b
+              >：新規タブ作成、タブ名変更、タブをピン留め、タブを削除
+            </li>
+          </div>
+        </section>
+
+        <!--3.クイック設定-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.クイック設定</h2>
+
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          右上の設定アイコンから開けます。
+
+          <div class="content-box">
+            <p>設定項目</p>
+            <br />
+            <li><b>カメラ設定</b>:カメラ水平速度(m/s)、カメラ垂直速度(m/s)</li>
+            <li><b>水平ロック</b>:有効時、カメラは地面と平行に移動</li>
+            <li>
+              <b>配置設定</b
+              >:配置したオブジェクトを地形へ密着配置、表面吸着（周囲のオブジェクトへスナップ）、表面に吸着後、角度を補正（吸着対象へ自動整列）、中心揃え（オブジェクト中心を自動整列）、位置を揃える、移動時に距離を表示
+            </li>
+            <li>
+              <b>表示設定</b
+              >:創造物の戦闘開始範囲、プリセットポイントを常時表示、空オブジェクトのヒントモデルの常時表示、パス表示、備考の常時表示、測距線の常時表示
+            </li>
+            <li>
+              <b>環境設定</b>:配置ファイルを読み込み、背景、照明リスト、天気
+            </li>
+            <li><b>その他の設定</b>:Altコピーの数、ショートカットキー一覧</li>
+          </div>
+        </section>
+
+        <!--4.詳細パネル-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.詳細パネル</h2>
+
+          <img src="img/6.png" style="width: 60%" /><br /><br />
+          シーンまたはアセットバーでユニットを選択すると、右側に詳細パネルが表示されます。
+
+          <div class="content-box">
+            <li>シーン内選択時は右上の三本線のボタンで開閉可能</li>
+            <li>アセットバー選択時は、閉じた後に再選択すると再表示されます</li>
+          </div>
+        </section>
+
+        <!--5.モード切替-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.モード切替</h2>
+
+          <img src="img/7.png" style="width: 60%" /><br /><br />
+          上部ボタンから編集モードを切り替えます。
+
+          <div class="content-box">
+            <li>
+              <b>地形編集</b
+              >:地形作成、環境設定、オブジェクト配置、創造物配置、ドロップ配置
+            </li>
+            <li>
+              <b>エンティティ配置</b>:オブジェクト配置、創造物配置、ドロップ配置
+            </li>
+            <li>
+              <b>プレハブライブラリ</b
+              >:オブジェクトプレハブ作成・編集、創造物プレハブ作成・編集、ドロッププレハブ作成・編集、プレハブグループ管理
+            </li>
+            <li>
+              <b>戦闘プリセット</b
+              >:プレイヤーテンプレート編集、ジョブ編集、ユニット状態編集、スキル編集、ローカル投射物編集、アイテム編集、エフェクトツール
+            </li>
+          </div>
+        </section>
+
+        <!--6.カメラ操作-->
+        <section class="section">
+          <h2 id="6" class="anchor-title">⭐6.カメラ操作</h2>
+          <div class="content-box">
+            <li><b>カメラの移動</b>:WASDキー</li>
+            <li><b>カメラ上昇</b>:Eキー</li>
+            <li><b>カメラ下降</b>:Qキー</li>
+            <li><b>カメラの回転</b>:右クリック</li>
+            <li><b>カメラの平行移動</b>:中クリック</li>
+            <li><b>ズームイン/アウト</b>:マウスホイール</li>
+            <li><b>カメラの水平ロックの有効化/無効化</b>:Alt + Lキー</li>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
