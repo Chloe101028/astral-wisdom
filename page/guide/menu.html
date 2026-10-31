@@ -1,0 +1,116 @@
+<!-- #region エディタ機能 -->
+<details>
+  <summary>エディタ機能</summary>
+  <ul>
+    <li>
+      <a href="/astral-wisdom/page/guide/1-editor/1/main.html"
+        >メインインターフェース</a
+      >
+    </li>
+    <li>
+      <a href="/astral-wisdom/page/guide/1-editor/2/main.html"
+        >地形編集モード</a
+      >
+    </li>
+    <!-- <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >エンティティ配置モード</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >プレハブライブラリモード</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >戦闘プリセットモード</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >ステージ設定</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >テストプレイ</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >マルチテストプレイ</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >星々の箱庭</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >アセットのインポート/エクスポート</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >取り消し/復元</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >幻境アセットセンター</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >編集ツール</a
+      >
+    </li>
+    <li>
+      <a
+        href="/astral-wisdom/page/support/2/luaApiDocument/top/definitions.html"
+        >編集ID</a
+      >
+    </li> -->
+  </ul>
+</details>
+<!-- #endregion -->
+
+<script>
+  document.querySelectorAll("details").forEach((details) => {
+    const summary = details.querySelector("summary");
+    const key = "menu-" + summary.textContent.trim();
+
+    const state = localStorage.getItem(key);
+
+    if (state !== null) {
+      details.open = state === "open";
+    }
+
+    details.addEventListener("toggle", () => {
+      localStorage.setItem(key, details.open ? "open" : "closed");
+    });
+  });
+
+  const current = window.location.pathname;
+
+  document.querySelectorAll("a").forEach((link) => {
+    const url = new URL(link.href);
+
+    if (url.pathname === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
