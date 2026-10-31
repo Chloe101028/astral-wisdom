@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.開き方</a>
+      <a href="#3">3.配置の手順</a>
+      <a href="#4">4.エンティティ、プレハブの上書き</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>エンティティ配置モード</h2>
+          <section class="hero-image">
+            <img src="img/1.png" />
+          </section>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          ステージ内で必要なエンティティ（オブジェクト）を作成・配置し、そのデータを編集する機能です。<br />
+
+          地形編集と同じシーンを共有しています。
+        </section>
+
+        <!--2.開き方-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.開き方</h2>
+          <img src="img/2.png" />
+        </section>
+
+        <!--3.配置の手順-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.配置の手順</h2>
+
+          <h3>🌸1.アセット欄からオブジェクトを作成</h3>
+          アセット欄からオブジェクトを左クリックしたままドラッグし、離すとエディタ内に配置されます。<br />
+          また、アセット欄のオブジェクトを左クリックするだけで画面の中央に作成されます。
+
+          <div class="content-box">
+            <p>動的ユニット</p>
+            <br />
+            「プリセット」タブ内の「動的ユニット」タブでは、動的エンティティを作成できます。<br />
+            動的エンティティにはコンポーネントやノードグラフを追加できますが、負荷が高くなる傾向にあります。<br />
+            主にゲームプレイに関わるオブジェクトに使用されます。
+          </div>
+
+          <div class="content-box">
+            <p>静的ユニット</p>
+            <br />
+            「プリセット」タブ内の「静的ユニット」タブでは、静的エンティティを作成できます。<br />
+            静的エンティティには、コンポーネントやノードグラフを追加することができません。<br />
+            動作が軽く、主に背景などの景観に使用されます。
+          </div>
+
+          <div class="content-box">
+            <p>カスタムタブ</p>
+            <br />
+            「カスタム」タブでは、選択したカスタムプレハブの種類によって、オブジェクトが動的になるか静的になるかが決まります。
+          </div>
+
+          <div class="content-box">
+            <p>補足</p>
+            <br />
+            動的エンティティはGUIDを持ち、ノードグラフによる制御が可能です。<br />
+            静的エンティティはGUIDを持ちません。
+          </div>
+
+          <h3>🌸2.基本操作</h3>
+
+          (1) 単一選択<br />
+          <hr />
+          <br />
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          左クリックでオブジェクトを選択します。<br />
+          選択されたエンティティはアウトラインでハイライト表示され、変形・操作ツールとツールバーが表示されます。<br />
+          また、右側の詳細画面が開きます。<br /><br />
+
+          (2) 複数選択<br />
+          <hr />
+          <br />
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          マウスの左ボタンを押したままドラッグすると、範囲選択できます。<br />
+          Shiftキーを押しながら左クリックすると、選択範囲の追加または削除ができます。<br /><br />
+
+          選択されているすべてのエンティティの中央に変形・操作ツールが表示されます。<br /><br />
+
+          ※一部のエンティティは同時に選択できません。<br /><br />
+
+          (3) 選択のキャンセル<br />
+          <hr />
+          <br />
+          <img src="img/10.png" /><br /><br />
+          何もないエリアをクリックすると、選択が解除されます。<br /><br />
+
+          (4) 移動、回転、ズーム<br />
+          <hr />
+          <br />
+          変形・操作ツールを使用して、エンティティの移動、回転、ズームを行います。<br />
+          Spaceキーを押すとツールタイプをオールインワン⇒移動⇒回転⇒ズームの順番で切り替えられます。
+
+          <div class="content-box">
+            <p>オールインワン</p>
+            <br />
+            <img src="img/5.png" /><br />
+            移動、回転、ズームの一部の機能を提供し、相対座標変換のみをサポートします。
+          </div>
+
+          <div class="content-box">
+            <p>移動</p>
+            <br />
+            <img src="img/6.png" /><br />
+            オブジェクトの位置を変更します。<br />ワールド座標とローカル座標の両方に対応しています。
+          </div>
+
+          <div class="content-box">
+            <p>回転</p>
+            <br />
+            <img src="img/7.png" /><br />
+            オブジェクトの向きを変更します。<br />ワールド座標とローカル座標の両方に対応しています。
+          </div>
+
+          <div class="content-box">
+            <p>ズーム</p>
+            <br />
+            <img src="img/8.png" /><br />
+            オブジェクトの大きさを変更できます。<br />ローカル座標のみ対応しています。
+          </div>
+
+          <div class="content-box">
+            <img src="img/9.png" /><br />
+            <img src="img/10.png" /><br />
+            <img src="img/11.png" /><br />
+            各ツールで変化量を設定することで、より精密な操作ができます。
+          </div>
+
+          (5) エンティティの削除<br />
+          <hr />
+          <br />
+          ゴミ箱アイコン または
+          Deleteキーを押すことで、選択中のエンティティを削除できます。<br /><br />
+
+          (6) エンティティのコピー＆ペースト<br />
+          <hr />
+          <br />
+          右クリックメニューからコピー⇒ペーストするか または
+          Ctrlキー＋Cキー⇒Ctrlキー＋Vキーでコピー＆ペーストができます。<br />
+          複製されたエンティティは、エディタ画面内のカーソル位置に配置されます。<br /><br />
+
+          Altキーを押しながら変形・操作ツールの軸をクリックするとその場で複製することができます。<br />
+          この場合は、元のオブジェクトと同じ位置に作成されます。<br />
+          1回のアクションで作成されるコピー数は、クイック設定(右上の歯車アイコン)から設定することができます。<br /><br />
+
+          (7) エンティティデータのコピー＆ペースト<br />
+          <hr />
+          <br />
+          選択したオブジェクトを右クリックして、「エンティティのデータをコピー」⇒「エンティティのデータをペースト」で実行します。<br /><br />
+
+          エンティティのデータをペーストすると、選択中のエンティティの情報が上書きされ、プレハブの参照先が更新されます。<br />
+          エンティティのGUIDは変更されません。<br /><br />
+
+          オブジェクトと創造物の間で、エンティティデータのコピー＆ペーストはできません。<br /><br />
+
+          (8) 元に戻す・復元<br />
+          <hr />
+          <br />
+          右上の左矢印アイコンをクリックするか
+          Ctrlキー＋Zキーで直前のアクションを取り消すことができます。<br />
+          右矢印アイコンをクリックするか
+          Ctrlキー＋Yキーで取り消したアクションを復元することができます。<br /><br />
+
+          ※一部の操作では利用できない場合があります。<br /><br />
+
+          (9) クイックセーブ<br />
+          <hr />
+          <br />
+          システムメニューから「クイック保存」を行うか
+          Ctrlキー＋Sキーで現在のプロジェクトのすべてのデータを保存します。<br />
+          こまめにセーブするようにしてください。<br /><br />
+
+          ※一部の操作では利用できない場合があります。<br /><br />
+
+          <h3>🌸3.詳細編集</h3>
+          <img src="img/12.png" style="width: 60%" /><br />
+          一番左の「基本属性」タブから編集することができます。
+
+          <div class="content-box">
+            <p>変換・操作</p>
+            <br />
+            <img src="img/13.png" /><br />
+            位置、回転、ズームを微調整できます。<br />
+
+            「変換をロック」を有効にすると、変形・操作ツールで変更できなくなり、誤った編集を防ぐことができます。
+          </div>
+
+          <div class="content-box">
+            <p>モデル</p>
+            <br />
+            <img src="img/14.png" /><br />
+            メインオブジェクトのモデル変更(※空のオブジェクトのみ)、ユニット接続点の表示、装飾品の編集を行うことができます。
+          </div>
+
+          <div class="content-box">
+            <p>ネイティブ衝突</p>
+            <br />
+            <img src="img/15.png" /><br />
+            初期有効：これをオンにすると、オブジェクトの衝突が有効になります。（通り抜けしなくなる）<br />
+
+            クライマブル：これをオンにすると、そのエンティティを登れるようになります。
+          </div>
+
+          <div class="content-box">
+            <p>可視性</p>
+            <br />
+            <img src="img/16.png" /><br />
+            モデルの表示設定は、そのモデルの外見上の表示のみに影響し、エンティティのその他のロジックには影響しません。
+          </div>
+
+          <div class="content-box">
+            <p>作成設定</p>
+            <br />
+            <img src="img/17.png" /><br />
+            初期作成を無効にすると、ステージ開始時にエンティティは作成されません。<br />
+            ノードグラフを使用するとこで、動的に作成できるようになります。
+          </div>
+
+          <div class="content-box">
+            <p>陣営</p>
+            <br />
+            <img src="img/18.png" /><br />
+            エンティティの所属陣営を設定できます。
+          </div>
+
+          <div class="content-box">
+            <p>ユニットタグ</p>
+            <br />
+            <img src="img/19.png" /><br />
+            タグの追加や、ノードグラフ内からタグ付けされたエンティティの検索が可能です。
+          </div>
+
+          <div class="content-box">
+            <p>実体配置グループ</p>
+            <br />
+            <img src="img/20.png" /><br />
+            オブジェクトの「実体配置グループ」を管理します。
+          </div>
+
+          <div class="content-box">
+            <p>負荷最適化</p>
+            <br />
+            <img src="img/21.png" /><br />
+            オブジェクトがキャラクターから離れている場合、プレイヤーのローカル環境で動作させるかを制御します。
+          </div>
+
+          <div class="content-box">
+            <p>効果音</p>
+            <br />
+            <img src="img/22.png" /><br />
+            エンティティ固有の効果音を再生するかどうかを設定します。（創造物の鳴き声など）
+          </div>
+
+          <div class="content-box">
+            <p>参照元</p>
+            <br />
+            <img src="img/23.png" /><br />
+            エンティティが参照しているプレハブを確認できます。
+          </div>
+
+          <div class="content-box">
+            <p>備考</p>
+            <br />
+            <img src="img/24.png" /><br />
+            テキストメモを入力できます。
+          </div>
+
+          <h3>🌸4.クイック配置設定</h3>
+          <div class="content-box">
+            <p>歯車アイコンから設定できます。</p>
+            <br />
+            <li><b>カメラ設定</b>:カメラの移動速度設定</li>
+            <li>
+              <b>配置したオブジェクトを地形へ密着配置</b>:地面に沿って配置
+            </li>
+            <li><b>表面吸着</b>:オブジェクト表面へ吸着</li>
+            <li><b>表面に吸着後、角度を補正</b>:吸着後の向きを自動補正</li>
+            <li><b>中心揃え</b>:2つのオブジェクトの中心を揃える</li>
+            <li><b>移動時に距離を表示</b>:移動距離を表示</li>
+            <li>
+              <b>表示設定</b
+              >::創造物の戦闘開始範囲、プリセットポイントを常時表示、空オブジェクトのヒントモデルの常時表示、パス表示、備考の常時表示、測距線の常時表示
+            </li>
+            <li><b>環境設定</b>:編集時の環境変更</li>
+            <li><b>Altコピーの数</b>:Alt複製数設定</li>
+            <li><b>ショートカットキー一覧</b>:ショートカット一覧表示</li>
+          </div>
+        </section>
+
+        <!--4.エンティティ、プレハブの上書き-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">
+            ⭐4.エンティティ、プレハブの上書き
+          </h2>
+
+          <h3>🌸1.エンティティとプレハブ</h3>
+          アセット欄からドラッグしたオブジェクトは、「エンティティ」となります。<br />
+          関連付けられているプレハブは、詳細画面の基本属性の参照元から確認することができます。<br /><br />
+
+          エンティティのデータはプレハブを参照しており、エンティティ上で行った編集は、参照元データを上書きします。<br /><br />
+
+          プレハブを削除すると、そのプレハブから生成されたすべてのエンティティが削除されます。<br /><br />
+
+          <h3>🌸2.エンティティにおけるプレハブデータの上書き</h3>
+          <img src="img/25.png" style="width: 60%" /><br /><br />
+          上書きされていない項目は、プレハブ側での更新内容が適用されます。（プレハブライブラリ側で上書き保存をする必要があります）<br /><br />
+
+          上書きした項目には、プレハブからの更新は反映されません。（これらの項目は詳細画面上でオレンジ色にハイライトされます）<br /><br />
+
+          <h3>🌸3.プレハブの修正</h3>
+          プレハブは、「プレハブライブラリ」から直接編集できます。<br /><br />
+
+          「エンティティ配置」に存在するエンティティについては、右クリックメニューの「プレハブを上書き保存」をクリックすることで、変更したデータを元のプレハブに反映させることができます。<br /><br />
+
+          「プレハブとして保存」をクリックすると、新しいプレハブとして作成されます。<br /><br />
+
+          <h3>🌸4.エンティティをプレハブのデータに復元する</h3>
+          (1) すべて復元<br />
+          <hr />
+          <br />
+          <img src="img/26.png" style="width: 60%" /><br /><br />
+          オブジェクトのアイコンをクリックすると詳細メニューが開きます。<br />
+          そこで、「プレハブデータに復元」をクリックすると位置と回転を除くすべてのエンティティデータがプレハブの設定に合わせてリセットされます。<br /><br />
+
+          (2) 部分的に復元<br />
+          <hr />
+          <br />
+          <img src="img/27.png" style="width: 60%" /><br /><br />
+          各項目の横三本線のアイコンをクリックすると詳細メニューが開きます。<br />
+          そこで、「プレハブデータに復元」をクリックするとその項目がプレハブの設定に合わせてリセットされます。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
