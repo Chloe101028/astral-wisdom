@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.開き方</a>
+      <a href="#2">2.プレハブライブラリの画面構成</a>
+      <a href="#3">3.アセットバーの詳細</a>
+      <a href="#4">4.プレハブライブラリの使い方</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>プレハブライブラリモード</h2>
+        </section>
+
+        <!--1.開き方-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.開き方</h2>
+          <img src="img/1.png" />
+        </section>
+
+        <!--2.プレハブライブラリの画面構成-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.プレハブライブラリの画面構成</h2>
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          プレハブライブラリのアセットバーは左側に配置されています。
+        </section>
+
+        <!--3.アセットバーの詳細-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.アセットバーの詳細</h2>
+
+          <h3>🌸1.カスタムプレハブ</h3>
+          <div class="content-box">
+            <li>デフォルトで「未分類」タブが含まれています。</li>
+            <li>
+              「タブを追加」をクリックすると、カスタムタブを作成できます。
+            </li>
+          </div>
+
+          <h3>🌸2.基礎モジュール</h3>
+          <div class="content-box">
+            <p>動的ユニットと静的ユニットが含まれます。</p>
+            <br />
+            <li>
+              動的ユニットには、進行オブジェクト、ゲームプレイギミックなどが含まれます。
+            </li>
+            <li>
+              静的ユニットには、木、植物、地形オブジェクトなどが含まれます。
+            </li>
+          </div>
+
+          <h3>🌸3.アセットライブラリ</h3>
+          <div class="content-box">
+            <li>
+              ローカルアセットに基づいて、インポート可能なプレハブを表示します。
+            </li>
+          </div>
+        </section>
+
+        <!--4.プレハブライブラリの使い方-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.プレハブライブラリの使い方</h2>
+
+          <h3>🌸1.プレハブの作成</h3>
+          (1) アセット欄 – 基礎モジュールから作成<br />
+          <hr />
+          <br />
+          アセット欄からオブジェクトを左クリックしたままドラッグし、離すとエディタ内に配置されます。<br />
+          また、アセット欄のオブジェクトを左クリックするだけで画面の中央に作成されます。<br /><br />
+
+          (2) コピー＆ペーストで作成<br />
+          <hr />
+          <br />
+          右クリックメニューから、既存のカスタムプレハブをコピーします。<br />
+          その後、何もないエリアを右クリックし、ペーストを実行します。<br /><br />
+
+          (3) 新規作成された未保存プレハブ<br />
+          <hr />
+          <br />
+          <img src="img/3.png" /><br /><br />
+          未保存のプレハブは、対象のオブジェクトに緑色の＋アイコンが表示されます。<br /><br />
+
+          <h3>🌸2.プレハブの編集</h3>
+          編集したいプレハブをクリックすると、画面右側に詳細画面が開きます。<br />
+          詳細画面では、エンティティ編集と同じ手順で、プレハブの属性、戦闘設定、コンポーネント、ノードグラフを編集できます。<br /><br />
+
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          カスタムプレハブに追加は変更が行われると、オブジェクトに黄色の！アイコンが表示されます。<br />
+          また、それに対応して、左側のアセット欄内にあるアイコンにも黄色の！アイコンが付きます。<br /><br />
+
+          <h3>🌸3.プレハブの保存</h3>
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          <img src="img/6.png" /><br /><br />
+          新規作成したプレハブは、下部メニューの「保存」 または
+          右クリックメニューの「プレハブとして保存」をクリックして、プレハブを保存します。<br /><br />
+
+          <img src="img/7.png" style="width: 60%" /><br /><br />
+          <img src="img/8.png" /><br /><br />
+          カスタムプレハブを保存するには、下部メニュー または
+          右クリックメニューから保存します。
+          <div class="content-box">
+            <li>
+              <b>プレハブを上書き保存</b>：既存のプレハブを上書き保存します。
+            </li>
+            <li><b>プレハブとして保存</b>：新規プレハブを作成します。</li>
+            <li>
+              <b>カスタムタブ管理</b
+              >：新規タブ作成、タブ名変更、タブをピン留め、タブを削除
+            </li>
+            <br />
+            <p style="color: tomato">
+              ※上書き保存を行うと、「エンティティ配置」タブ内でこのプレハブを参照しているすべてのオブジェクトに対して更新内容を反映します。<br />
+              　ただし、それらのオブジェクトが個別に変更していた場合、その箇所は上書きされずに保持されます。
+            </p>
+          </div>
+
+          <h3>🌸4.プレハブの使用方法</h3>
+          <div class="content-box">
+            <li>
+              <b>ゲーム内で使用</b
+              >：アセット欄からクリックまたはドラッグして、プレハブに基づいたオブジェクトを作成します。
+            </li>
+            <li>
+              <b>外部で使用</b
+              >：プレハブIDが必要な機能については、詳細画面の上部からIDをコピーしてください。
+            </li>
+            <li>
+              <b>カスタムタブ管理</b
+              >：新規タブ作成、タブ名変更、タブをピン留め、タブを削除
+            </li>
+            <img src="img/9.png" />
+          </div>
+
+          <h3>🌸5.プレハブの切り替え</h3>
+          <img src="img/10.png" style="width: 60%" /><br /><br />
+          詳細画面の上部で、「動的」と「静的」を切り替えることができます。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
