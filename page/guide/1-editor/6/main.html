@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.起動方法</a>
+      <a href="#2">2.機能詳細</a>
+      <a href="#3">3.機能詳細(基礎)</a>
+      <a href="#4">4.機能詳細(陣営)</a>
+      <a href="#5">5.機能詳細(スポーン地点)</a>
+      <a href="#6">6.機能詳細(復活地点)</a>
+      <a href="#7">7.機能詳細(人数設定)</a>
+      <a href="#8">8.機能詳細(ロード画面)</a>
+      <a href="#9">9.機能詳細(集計)</a>
+      <a href="#10">10.機能詳細(地形ナビゲーション)</a>
+      <a href="#11">11.機能詳細(最適化オプション)</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>ステージ設定</h2>
+        </section>
+
+        <!--1.起動方法-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.起動方法</h2>
+          <img src="img/1.png" style="width: 60%" /><br /><br />
+          左上のシステムメニューボタンをクリックしてメニュー画面を開きます。<br /><br />
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          「ステージ設定」をクリックすると、ステージ設定画面が開き、ステージ全体の設定を行うことができます。
+        </section>
+
+        <!--2.機能詳細-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.機能詳細</h2>
+
+          <h3 id="3" class="anchor-title">🌸基礎</h3>
+          <!-- #region 基礎 -->
+          <br />
+          <img src="img/3.png" style="width: 60%" /><br />
+          <img src="img/4.png" style="width: 60%" /><br />
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          「基礎」では、一般的なステージ設定の構成を行えます。<br /><br />
+          (1) 実行後のシーン効果範囲<br />
+          <hr />
+          <br />
+          ステージの有効範囲を編集します。<br />
+          範囲外のコンテンツは反映されません。<br />
+          そのためステージを範囲内におさめて作成するか、範囲外に出てしまった場合は効果範囲を広げる必要があります。
+          <div class="content-box">
+            <p>「カスタム範囲」を押すと任意の範囲を設定できます。</p>
+            <br />
+            <img src="img/6.png" style="width: 60%" /><br />
+            <img src="img/7.png" style="width: 60%" />
+          </div>
+
+          (2) ステージ環境レベル<br />
+          <hr />
+          <br />
+          環境レベルは、キャラクター以外を発生源とする草・雷元素反応ダメージ係数に影響します。<br />
+          レベルが高いほど、係数も高くなります。<br /><br />
+
+          対象となる元素反応は、過負荷/超電導/感電/燃焼/拡散/氷砕き/開花/超開花/烈開花/超激化/草激化です。<br /><br />
+
+          設定範囲：1-120　キャラクターや創造物のレベルに合わせることが推奨されています。<br />
+
+          「フル開花ダメージを有効にする」をオンにすると、デフォルトですべてのユニットに対して、開花系反応ダメージが発生するようになります。<br /><br />
+
+          (3) 現在の許可プレイヤー数<br />
+          <hr />
+          <br />
+          「人数設定」で許可した人数設定が表示されます。<br /><br />
+
+          (4) ステージエンティティ<br />
+          <hr />
+          <br />
+          <img src="img/8.png" style="width: 60%" />
+          <div class="content-box">
+            <li>
+              ステージエンティティは追加・削除できません。<br />
+              　ステージエンティティだけが Down イベントを監視できます。
+            </li>
+            <li>
+              「確認」をクリックすると、エディタ画面内のステージエンティティの場所へと移動します。
+            </li>
+          </div>
+
+          (5) 時間設定<br />
+          <hr />
+          <br />
+          ステージ開始時の初期時刻と時間の進行速度を設定します。<br />
+          時間は周囲の環境（月の位置や空の明るさなど）に影響を与えます。<br /><br />
+
+          進行速度は、最大で「現実の１秒＝ゲーム内の６０分」まで設定可能です。<br /><br />
+
+          (6) 負荷最適化<br />
+          <hr />
+          <br />
+          このステージの負荷要件を設定します。<br />
+          負荷が高いと、一部のデバイスで正常に動作しない可能性があります。<br /><br />
+
+          (7) 範囲外では実行されません<br />
+          <hr />
+          <br />
+          <img src="img/9.png" style="width: 60%" /><br /><br />
+          ステージの進行中、「負荷最適化」が有効なエンティティは、プレイヤーから一定の距離を離れるとクライアント上での動作を停止します。<br /><br />
+
+          (8) アグロタイプ<br />
+          <hr />
+          <div class="content-box">
+            <li>
+              <b>デフォルト</b>：従来のアグロルールに従います。<br />
+              ノードによるアグロパラメータの参照や変更はできません。
+            </li>
+            <li>
+              <b>カスタム</b
+              >：オブジェクト、創造物、ジョブ、ユニット状態に対してアグロ設定が可能です。<br />
+              ノードによるアグロパラメータの参照および変更が可能です。
+            </li>
+            <br />
+            <p style="color: tomato">
+              ※アグロは、ヘイトのことです。敵から狙われる度合いの数値。
+            </p>
+          </div>
+
+          (9) シールド設定<br />
+          <hr />
+          <div class="content-box">
+            <li>
+              <b>統一計算</b
+              >：複数のユニット状態がシールド持っている時、各状態の判定優先度に従ってダメージを吸収します。
+            </li>
+            <li>
+              <b>個別計算</b
+              >：各ユニット状態のシールド毎に個別にダメージを計算し、最も多くのダメージを吸収したシールドが適用されます。
+            </li>
+          </div>
+
+          (10) 途中退室の保護<br />
+          <hr />
+          <br />
+          <img src="img/10.png" /><br /><br />
+          有効にした場合、入力した時間が経過するまではメニューから途中退室できなくなります。<br />
+
+          0-180まで入力可能です。<br /><br />
+
+          (11) 地形設定<br />
+          <hr />
+          <br />
+          <img src="img/11.png" /><br /><br />
+          地形コリジョンの最適化機能です。
+          <div class="content-box">
+            <p>有効化することで以下の効果があります。</p>
+            <br />
+            <li>地形タイル間の隙間発生を抑制</li>
+            <li>キャラクターが引っかかる現象を軽減</li>
+            <li>地形内への埋まり込みを軽減</li>
+            <li>移動がより滑らかになる</li>
+            <br />
+            <p style="color: tomato">
+              ※有効化するとレイキャスト判定の精度へ影響する場合があります。<br />
+
+              トリガー判定やスキル命中判定など、レイ検出を使用するゲームでは十分なテストが推奨されています。
+            </p>
+            <br /><br />
+            <b>オン</b
+            >：地形の隙間を減らし移動を滑らかにするが、レイ判定へ影響する場合あり<br />
+            <b>オフ</b>：標準コリジョン設定。レイ判定へ影響なし<br /><br />
+            <p>推奨用途</p>
+
+            <li>パルクール</li>
+            <li>地形移動</li>
+            <li>足場移動が主体のステージ</li>
+            <br />
+
+            <p>非推奨用途</p>
+
+            <li>矢の命中判定</li>
+            <li>視線判定</li>
+            <li>レイ判定依存が強いステージ</li>
+          </div>
+          <!-- #endregion -->
+
+          <!-- #region 陣営 -->
+          <h3 id="4" class="anchor-title">🌸陣営</h3>
+          <br />
+          <img src="img/12.png" style="width: 60%" /><br /><br />
+          プレイヤー、創造物、オブジェクトが所属する陣営を設定します。<br /><br />
+          <!-- #endregion -->
+
+          <!-- #region スポーン地点 -->
+          <h3 id="5" class="anchor-title">🌸スポーン地点</h3>
+          <br />
+          <img src="img/13.png" style="width: 60%" /><br /><br />
+          プレイヤーのスポーン地点を設定します。<br /><br />
+          (1) スポーン地点の共有<br />
+          <hr />
+          <br />
+          有効にすると、複数のプレイヤーが同じスポーン地点を使用できるようになります。<br /><br />
+
+          (2) スポーン地点の名前<br />
+          <hr />
+          <br />
+          他の地点と区別しやすいように、このスポーン地点に好きな名前を付けることができます。<br /><br />
+
+          (3) プレイヤーテンプレートに適用<br />
+          <hr />
+          <br />
+          このスポーン地点を利用できるプレイヤーテンプレートを選択します。<br /><br />
+
+          (4) ポイント選択<br />
+          <hr />
+          <br />
+          ステージ内のプリセットポイントを選択し、スポーン地点として設定します。<br /><br />
+
+          (5) スポーン地点を追加<br />
+          <hr />
+          <br />
+          スポーン地点を作成できます。<br />
+          新しく追加された地点は、デフォルトの「スポーン地点1」と同じ機能を持ちます。<br /><br />
+          <!-- #endregion -->
+
+          <!-- #region 復活地点 -->
+          <h3 id="6" class="anchor-title">🌸復活地点</h3>
+          <br />
+          <img src="img/14.png" style="width: 60%" /><br /><br />
+          プレイヤーの復活地点を設定します。<br />
+          初期状態では復活地点のリストは空です。<br />
+          「復活地点を追加」をクリックして、「復活地点1」を追加してください。<br /><br />
+          <!-- #endregion -->
+
+          <!-- #region 人数設定 -->
+          <h3 id="7" class="anchor-title">🌸人数設定</h3>
+          <br />
+          <img src="img/15.png" style="width: 60%" />
+          <div class="content-box">
+            <p>グループ化の目的</p>
+            <br />
+            <li>マッチング時、チーム人数が上限を超えるとマッチング不可。</li>
+            <li>ルーム内で必要人数を満たしていないとゲーム開始不可。</li>
+            <br /><br />
+            <p>現在のマッチング仕様</p>
+            <br />
+            <li>
+              まず、現在のプレイヤー数が「最小必要人数」に最も近い「必須グループ」へ優先的にプレイヤーを割り当てます。
+            </li>
+            <li>次に、必須チームへの割り当てを優先します。</li>
+            <li>
+              すべての必須チームが満員になった後、各グループへ順番にプレイヤーを割り当てます。
+            </li>
+          </div>
+          <div class="content-box">
+            <p>現在の陣営データを一括適用</p>
+            <br />
+            各陣営のプレイヤー数に基づいてグループが作成されます。
+          </div>
+          <div class="content-box">
+            <p>人数タイプ</p>
+            <br />
+            <li><b>カスタム人数</b>：グループの人数を範囲内で変更できます。</li>
+            <li><b>固定人数</b>：グループの人数が固定されます。</li>
+          </div>
+          <div class="content-box">
+            <p>人数</p>
+            <br />
+            グループに属するプレイヤーの数です。
+          </div>
+          <div class="content-box">
+            <p>含まれるプレイヤー</p>
+            <br />
+            グループに対応するプレイヤーを設定します。
+          </div>
+          <div class="content-box">
+            <p>必須グループかどうか</p>
+            <br />
+            無効にすると、このグループにプレイヤーがいなくてもゲームを開始できます。
+          </div>
+          <!-- #endregion -->
+
+          <!-- #region ロード画面 -->
+          <h3 id="8" class="anchor-title">🌸ロード画面</h3>
+          <br />
+          <img src="img/16.png" style="width: 60%" /><br /><br />
+          ステージ入場時のロード画面に表示される内容を編集します。
+          <div class="content-box">
+            <p>
+              リソースを選択<br />ロード画面の背景に使用する画像をアップロードしてください。
+            </p>
+            <br />
+            <li>アップロードする画像はJPG形式である必要があります。</li>
+            <li>ファイルサイズは3MB以内にしてください。</li>
+            <li>推奨アスペクト比は16:9です。</li>
+          </div>
+
+          <div class="content-box">
+            <p>タイトル/紹介<br />ロード画面に表示されるテキストです。</p>
+            <br />
+            <img src="img/17.png" style="width: 60%" />
+          </div>
+          <!-- #endregion -->
+
+          <!-- #region 集計 -->
+          <h3 id="9" class="anchor-title">🌸集計</h3>
+          <br />
+          <img src="img/18.png" style="width: 60%" /><br /><br />
+          ゲーム終了時のリザルト画面を設定します。
+          <div class="content-box">
+            <p>集計画面タイプ</p>
+            <br />
+            <li>
+              <b>個人集計</b
+              >：各プレイヤーの成績に基づいたレイアウトでリザルト画面を表示します。
+            </li>
+            <li>
+              <b>陣営集計</b
+              >：勢力ごとのスコアに基づいたレイアウトでリザルト画面を表示します。
+            </li>
+          </div>
+
+          <div class="content-box">
+            <p>ゲーム内ランキングを有効にする</p>
+            <br />
+            個人・陣営別リザルトの表示順を決定します。ランキングの数値はノード経由で設定します。
+          </div>
+
+          <div class="content-box">
+            <p>関連ノードグラフ</p>
+            <br />
+            <img src="img/19.png" /><br /><br />
+            ノードグラフでリザルト関連のノードが設定されている場合、ここから該当のノードグラフへ移動できます。
+          </div>
+          <!-- #endregion -->
+
+          <!-- #region 地形ナビゲーション -->
+          <h3 id="10" class="anchor-title">🌸地形ナビゲーション</h3>
+          <br />
+          <img src="img/20.png" style="width: 60%" /><br /><br />
+          ナビメッシュとは、ゲーム内の歩けるエリアをポリゴンで表した地図で、経路データです。<br />
+          創造物はこれを利用して、歩行可能なエリアを歩きます。<br /><br />
+
+          地形を変更したり、静的オブジェクトを配置し直したりした場合は、レンダリングすることをお勧めします。<br />
+          創造物が動かない原因はこれにあることが多いです。<br /><br />
+
+          幻境ステージによってはこの機能が必要ないこともあると思うので、その場合はオフにしてもらって大丈夫です。<br /><br />
+
+          「テストアップロードヒント」をオフにすると、テストプレイ時に毎回聞かれる以下のポップアップが出なくなります。<br /><br />
+          <img src="img/21.png" /><br /><br />
+          <!-- #endregion -->
+
+          <!-- #region 最適化オプション -->
+          <h3 id="11" class="anchor-title">🌸最適化オプション</h3>
+          <br />
+          <img src="img/23.png" style="width: 60%" /><br /><br />
+          視界外のオブジェクトやプレイヤーが予期せぬ場所から脱出した際の衝突トリガー検出を最適化します。<br />
+          ただし、この機能によってシステム全体の負荷が増加する可能性があります。<br /><br />
+          <!-- #endregion -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
