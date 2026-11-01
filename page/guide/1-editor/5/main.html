@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.編集モジュール切替</a>
+      <a href="#2">2.作成と保存</a>
+      <a href="#3">3.性別切替</a>
+      <a href="#4">4.カメラのリセット</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>戦闘プリセットモード</h2>
+        </section>
+
+        <!--1.編集モジュール切替-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.編集モジュール切替</h2>
+          <img src="img/1.png" />
+          <div class="content-box">
+            <p>左のサイドバーから編集モジュールを切り替えることができます。</p>
+            <li>プレイヤー/ジョブエディタ</li>
+            <li>ユニット状態エディタ</li>
+            <li>スキルエディタ</li>
+            <li>ローカル投射物エディタ</li>
+            <li>アイテムエディタ</li>
+            <li>エフェクト作成エディタ</li>
+          </div>
+        </section>
+
+        <!--2.作成と保存-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.作成と保存</h2>
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          アセット欄にある「新規作成」ボタンを押下すると、現在選択中の編集モジュールにコンテンツを作成できます。<br /><br />
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          「プレイヤー/ジョブエディタ」で行った変更は自動的に保存されます。<br />
+          一方で、「ユニット状態エディタ」「スキルエディタ」「ローカル投射物エディタ」「アイテムエディタ」「エフェクト作成エディタ」で行った変更は手動で保存する必要があります。<br /><br />
+
+          アセット欄に黄色の！アイコンが表示されている場合は、未保存ですので、下部メニューの「保存」「名前を付けて保存」で上書き保存または新規作成するようにしてください。
+        </section>
+
+        <!--3.性別切替-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.性別切替</h2>
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          エディタ画面内のモデルの性別を切り替えるには、画面下部にある「性別を切り替え」ボタンを押してください。
+        </section>
+
+        <!--4.カメラのリセット-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.カメラのリセット</h2>
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+
+          「戦闘プリセット」モードで、何もないエリアで右クリックをすると「カメラリセット」のオプションが表示されます。<br />
+          これをクリックすると、カメラが初期状態に戻ります。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
