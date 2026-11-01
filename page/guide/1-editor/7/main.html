@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.開き方</a>
+      <a href="#3">3.利用制限</a>
+      <a href="#4">4.テストプレイの検証</a>
+      <a href="#5">5.テストプレイの流れ</a>
+      <a href="#6">6.テストプレイ中の操作</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>テストプレイ</h2>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          「テストプレイ」機能は、作成したステージのテストに使用できます。<br />
+          クリエイターは、さまざまな状況に応じた「テストプレイ設定」や「テストプレイ操作」を行うことができ、ステージの動作を素早く検証することができます。<br /><br />
+        </section>
+
+        <!--2.開き方-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.開き方</h2>
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          左上のシステムメニューを開きます。<br /><br />
+          <img src="img/3.png" style="width: 60%" />
+        </section>
+
+        <!--3.利用制限-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.利用制限</h2>
+          マルチプレイテストルームが有効な間は、テストプレイ機能を使用することができません。
+        </section>
+
+        <!--4.テストプレイの検証-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.テストプレイの検証</h2>
+
+          「テストプレイ」をクリックすることで、テストプレイ検証が行われ、すべてのチェックがOKであれば、テストプレイオプションが開きます。<br />
+          <p style="color: tomato">
+            ※ここのチェックは幻境ステージを起動するためのチェックであり、ノードグラフが正しいかをチェックしているわけではありません。
+          </p>
+        </section>
+
+        <!--5.テストプレイの流れ-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.テストプレイの流れ</h2>
+
+          テストプレイは、事前準備（アップロード、検証プロセス）、外観表示、ロード画面、ステージ入場、リザルト（ステージ終了処理）という一連の流れで構成されます。<br /><br />
+          <h3>🌸1.テストプレイの事前準備</h3>
+
+          (1) テストプレイヤーの選択<br />
+          <hr />
+          <br />
+          <img src="img/3.png" style="width: 60%" />
+          <div class="content-box">
+            <p>
+              テストプレイで使用するプレイヤーIDを設定することで、その設定したプレイヤーでテストプレイを行うことができます。
+            </p>
+            <p style="color: tomato">
+              ※幻境を遊ぶ旅人さんは、必ずプレイヤー1に入ってくれるわけではないので、どのプレイヤーからゲームを開始されたとしても遊べるようにテストしておくことをお勧めします。
+            </p>
+          </div>
+
+          (2) ゲーム内セーブデータの設定<br />
+          <hr />
+          <br />
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          作成したテストデータを設定することで、ある一定の状態からテストプレイを始めることができます。<br /><br />
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          システムメニュー⇒「テストプレイのデータ管理」<br /><br />
+          <img src="img/6.png" style="width: 60%" /><br /><br />
+
+          <h3>🌸2.コーデ展示段階を有効</h3>
+          <br />
+          無効にすることで、テストプレイ時にコーデ展示のフェーズをスキップして、直接ロード画面へ移動します。<br /><br />
+
+          <h3>🌸3.テストプレイ集計を有効</h3>
+          <br />
+          プレイヤーはゲームをクリアするか手動で終了することで、ステージ集計を発生させます。<br />
+          無効にすることで、ステージ集計関連のステップをスキップします。<br /><br />
+
+          <h3>🌸4.お試しドール</h3>
+          <br />
+          テストプレイオプションで設定したドールでテストプレイを開始します。<br /><br />
+
+          <h3>🌸5.テストプレイ時の言語</h3>
+          <br />
+          テストプレイオプションで設定した言語でテストプレイを開始します。<br />
+          翻訳機能を付けている場合は、ここで言語を変更して問題なく翻訳できているか確認しましょう。<br /><br />
+
+          <h3>🌸6.ロード画面の設定</h3>
+          <br />
+          「ステージ設定」の「ロード画面」で設定をしてください。<br /><br />
+
+          <h3>🌸7.ロード画面の設定</h3>
+          <br />
+          <img src="img/7.png" /><br /><br />
+          ボタンをクリックすると、クリエイターの設定に沿って、ステージ入場フローが実行されます。<br />
+          ※コーデ展示⇒ローディング画面⇒ステージ入場
+        </section>
+
+        <!--6.テストプレイ中の操作-->
+        <section class="section">
+          <h2 id="6" class="anchor-title">⭐6.テストプレイ中の操作</h2>
+
+          <h3>🌸1.退出</h3>
+          <br />
+          <img src="img/8.png" style="width: 60%" /><br /><br />
+          テストプレイ中に、左上の「退出」ボタン または
+          Escキーから「テストプレイ制御画面」を開くことができます。<br /><br />
+
+          <h3>🌸2.テストプレイ制御</h3>
+          <br />
+          <img src="img/9.png" style="width: 60%" /><br /><br />
+
+          (1) 挑戦を続ける<br />
+          <hr />
+          <br />
+          現在実行中のテストプレイに戻ります。<br /><br />
+
+          (2) 再挑戦<br />
+          <hr />
+          <br />
+          ステージ入場フローを再実行し、新しいテストプレイを開始します。<br /><br />
+
+          (3) 挑戦を中断する<br />
+          <hr />
+          <br />
+          現在のテストプレイを終了し、それに応じたステージ集計結果を生成します。<br /><br />
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
