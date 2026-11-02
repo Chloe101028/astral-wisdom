@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.アクセス方法</a>
+      <a href="#3">3.IDの編集方法</a>
+      <a href="#4">4.影響</a>
+      <a href="#5">5.データルール</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>編集ID</h2>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          <div class="content-box">
+            <p>編集ID機能では、制作中にIDを動的に変更・再割り当てできます。</p>
+            <p>
+              この機能は、エンティティGUID、プレハブID、配置IDなど、ID参照が含まれるすべてのコンテンツに適用されます。
+            </p>
+            <br />
+            <p style="color: tomato">
+              ※この機能は、協力モードの場合のみ使用できます。
+            </p>
+          </div>
+        </section>
+
+        <!--2.アクセス方法-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.アクセス方法</h2>
+          <img src="img/1.png" />
+        </section>
+
+        <!--3.IDの編集方法-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.IDの編集方法</h2>
+          <div class="content-box">
+            <li>1.編集IDをクリック</li>
+            <img src="img/1.png" /><br />
+            <li>2.新しいIDを入力</li>
+            <img src="img/2.png" /><br />
+            <li>3.「変更する」をクリック</li>
+          </div>
+        </section>
+
+        <!--4.影響-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.影響</h2>
+          <h3>🌸1.参照関係</h3>
+          <br />
+          IDを変更すると、
+          <p style="color: tomato">
+            他のコンテンツからそのオブジェクトへ向けられていた参照が失われます。
+          </p>
+          <br />
+          つまりノードや設定などでそのIDを参照していた場合、リンク切れになります。<br /><br />
+
+          <h3>🌸2.機能上の制限</h3>
+          <br />
+          一部の機能ではID変更が許可されていません。<br />
+          その場合は、「IDが表示のみになる」「ID自体が表示されない」ことがあります。<br /><br />
+
+          <h3>🌸3.入力チェック</h3>
+          <div class="content-box">
+            <p>以下のいずれかに該当すると変更は適用されません。</p>
+            <br />
+            <li>入力したIDが既存IDと重複している</li>
+            <li>未入力</li>
+            <li>最大文字数を超えている</li>
+            <li>現在のプロジェクト種別に属していないIDを指定した</li>
+          </div>
+        </section>
+
+        <!--5.データルール-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.データルール</h2>
+          <h3>🌸1.ID構造</h3>
+          エディタ上では10進数で表示されますが、内部では 32bit値
+          として処理されます。
+          <br />
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>ビット</th>
+                <th>意味</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bit31</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Bit30</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Bit29</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Bit22～28</td>
+                <td>ID種別</td>
+              </tr>
+              <tr>
+                <td>Bit16～21</td>
+                <td>協力モードのパートID</td>
+              </tr>
+              <tr>
+                <td>Bit0～15</td>
+                <td>連番ID</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+
+          <h3>🌸2.ID種別</h3>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>設定ID</th>
+                <th>種別</th>
+                <th>編集可能な数値IDの範囲</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>無効</td>
+                <td>1073741824–1077936127</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>ユニット状態</td>
+                <td>1077936128–1082130431</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>クライアントノードグラフ</td>
+                <td>1082130432–1086324735</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>ジョブ</td>
+                <td>1090519040–1094713343</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>ジョブ成長曲線</td>
+                <td>1094713344–1098907647</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>キャラカスタムスキル</td>
+                <td>1098907648–1103101951</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>スキルリソース</td>
+                <td>1103101952–1107296255</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>アイテム</td>
+                <td>1107296256–1111490559</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>通貨</td>
+                <td>1115684864–1119879167</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>バッグテンプレート</td>
+                <td>1119879168–1124073471</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>装備(タイプ)</td>
+                <td>1124073472–1128267775</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>装備(タグ)</td>
+                <td>1128267776–1132462079</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>装備(付加効果)</td>
+                <td>1132462080–1136656383</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>ショップテンプレート</td>
+                <td>1136656384–1140850687</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>装備スロットテンプレート</td>
+                <td>1153433600–1157627903</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>シールド</td>
+                <td>1157627904–1161822207</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>スキャンタグテンプレート</td>
+                <td>1161822208–1166016511</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>多彩なサプライズボックス</td>
+                <td>1174405120–1178599423</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>華麗なパフォーマンスボックス</td>
+                <td>1178599424～1182793727</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>光源</td>
+                <td>1182793728–1186988031</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>環境設定</td>
+                <td>1186988032–1191182335</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>創造物スキル</td>
+                <td>1191182336–1195376639</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>エフェクトツール</td>
+                <td>1199570944–1203765247</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>スキルステータスグループ</td>
+                <td>1203765248–1207959551</td>
+              </tr>
+              <tr>
+                <td>32</td>
+                <td>スキル変数</td>
+                <td>1207959552–1212153855</td>
+              </tr>
+              <tr>
+                <td>33</td>
+                <td>幻境ごほうびギフトボックス</td>
+                <td>1212153856–1216348159</td>
+              </tr>
+              <tr>
+                <td>34</td>
+                <td>幻境任務</td>
+                <td>1216348160–1220542463</td>
+              </tr>
+              <tr>
+                <td>35</td>
+                <td>カスタムミニマップ</td>
+                <td>1220542464–1224736767</td>
+              </tr>
+              <tr>
+                <td>36</td>
+                <td>カスタムミニマップ画像リソース</td>
+                <td>1224736768–1228931071</td>
+              </tr>
+              <tr>
+                <td>37</td>
+                <td>キャラクター操作スキル</td>
+                <td>1228931072–1233125375</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>エンティティID</th>
+                <th>種別</th>
+                <th>編集可能な数値IDの範囲</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>無効</td>
+                <td>1073741824–1077936127</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>オブジェクト(プレハブ含む)</td>
+                <td>1077936128–1082130431</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>創造物</td>
+                <td>1082130432–1086324735</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>ステージ</td>
+                <td>1094713344–1098907647</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
