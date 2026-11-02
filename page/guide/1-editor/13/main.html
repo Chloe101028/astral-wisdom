@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.陣形生成</a>
+      <a href="#3">3.対称編集</a>
+      <a href="#4">4.バウンディングボックス表示</a>
+      <a href="#5">5.備考機能</a>
+      <a href="#6">6.モデルデータのコピー＆ペースト</a>
+      <a href="#7">7.複数選択時の中心点表示</a>
+      <a href="#8">8.距離測定</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>編集ツール</h2>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          <div class="content-box">
+            <p>
+              編集ツールには、制作を補助する様々な機能がまとめられています。<br />
+              主な機能は以下の通りです。
+            </p>
+            <br />
+            <li>陣形生成</li>
+            <li>対称編集</li>
+            <li>バウンディングボックス表示</li>
+            <li>3D備考機能</li>
+          </div>
+        </section>
+
+        <!--2.陣形生成-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.陣形生成</h2>
+          <h3>🌸1.機能概要</h3>
+          <br />
+          グリッド陣形または環状陣形を利用して、オブジェクトを一括複製できます。<br /><br />
+
+          <h3>🌸2.対応ユニット</h3>
+          <br />
+          オブジェクトエンティティ、創造物エンティティ、ドロップエンティティ<br /><br />
+
+          <h3>🌸3.開き方</h3>
+          <img src="img/1.png" /><br /><br />
+          オブジェクトを選択し、右クリックメニューから「陣形」を選択します。<br /><br />
+
+          <h3>🌸4.グリッド陣形</h3>
+          (1) 機能説明<br />
+          <hr />
+          <br />
+          X・Y・Z軸方向に対し、設定した間隔と個数に従ってオブジェクトを配置します。<br /><br />
+
+          (2) モードの特徴<br />
+          <hr />
+          <br />
+          <img src="img/2.png" style="width: 60%" /><br />
+          <div class="content-box">
+            <li>専用編集モードになります。</li>
+            <li>モード中は他の操作はできません。</li>
+            <li>右上の「✕」または Esc キーで終了します。</li>
+          </div>
+
+          (3) 陣形設定<br />
+          <hr />
+          <br />
+          <img src="img/3.png" />
+          <div class="content-box">
+            <li><b>陣形の間隔</b>：X・Y・Z軸方向の間隔</li>
+            <li><b>陣形の数</b>：X・Y・Z軸方向に生成する個数</li>
+          </div>
+
+          (4) 陣形プレビュー<br />
+          <hr />
+          <br />
+          <img src="img/4.png" style="width: 60%" /><br />
+          実際には生成せず、配置結果だけを確認できます。<br /><br />
+
+          (5) 生成<br />
+          <hr />
+          <br />
+          右下の「作成を確定」を押すと生成され、モード終了となります。<br /><br />
+
+          <h3>🌸5.環状陣形</h3>
+          (1) 機能説明<br />
+          <hr />
+          <br />
+          指定した角度間隔で、中心点を基準に円形配置を行います。<br /><br />
+
+          (2) モードの特徴<br />
+          <hr />
+          <br />
+          <img src="img/5.png" style="width: 60%" /><br />
+          <div class="content-box">
+            <li>専用編集モードになります。</li>
+            <li>モード中は他の操作はできません。</li>
+            <li>右上の「✕」または Esc キーで終了します。</li>
+          </div>
+
+          (3) 陣形設定<br />
+          <hr />
+          <br />
+          <img src="img/6.png" style="width: 60%" /><br />
+          開始位置・向き・角度・個数を基準に円形配置を作成します。
+        </section>
+
+        <!--3.対称編集-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.対称編集</h2>
+          <h3>🌸1.機能概要</h3>
+          <br />
+          中心点・軸・平面を基準にミラーコピーを作成できます。<br /><br />
+
+          <h3>🌸2.対応ユニット</h3>
+          <br />
+          オブジェクトエンティティ、創造物エンティティ、ドロップエンティティ<br /><br />
+
+          <h3>🌸3.開き方</h3>
+          <img src="img/7.png" /><br /><br />
+          オブジェクトを選択し、右クリックメニューから「対称」を選択します。<br /><br />
+
+          <h3>🌸4.モードの特徴</h3>
+          <div class="content-box">
+            <li>専用編集モードになります。</li>
+            <li>モード中は他の操作はできません。</li>
+            <li>右上の「✕」または Esc キーで終了します。</li>
+          </div>
+
+          <h3>🌸5.操作手順</h3>
+          (1) 対称方式を選択<br />
+          <hr />
+          <br />
+          <img src="img/7.png" /><br /><br />
+          右クリックメニューから、「点対称」「軸対称」「面対称」のいずれかの「対称」サブオプションを選択します。<br /><br />
+
+          (2) 対称情報を編集<br />
+          <hr />
+          <br />
+          <img src="img/8.png" /><br /><br />
+
+          (3) プレビュー<br />
+          <hr />
+          <br />
+          <img src="img/9.png" style="width: 60%" /><br /><br />
+          「プレビュー」ボタンをクリックすると、実際に作成することなく対称効果をプレビューできます。
+          (4) 対称結果の生成<br />
+          <hr />
+          <br />
+          右下の「作成を確定」をクリックすると、対称結果が生成され、モードが終了します。<br /><br />
+
+          <h3>🌸6.対称方式</h3>
+          (1) 点対称<br />
+          <hr />
+          <br />
+          <img src="img/10.png" /><br /><br />
+          対称点を基準に180°反転した位置と回転を計算して生成します。<br /><br />
+
+          (2) 軸対称<br />
+          <hr />
+          <br />
+          <img src="img/11.png" /><br /><br />
+          指定した点と軸を基準に鏡写しを計算します。<br /><br />
+
+          (3) 面対称<br />
+          <hr />
+          <br />
+          <img src="img/12.png" /><br /><br />
+          指定した面を基準に鏡写しを計算します。<br /><br />
+
+          <h3>🌸7.補足</h3>
+          <div class="content-box">
+            <li>対称モードに入るたび新しい対称点が作られます。</li>
+            <li>対称点のデータは保存されません。</li>
+            <li>モード終了時に対称点のデータは削除されます。</li>
+          </div>
+        </section>
+
+        <!--4.バウンディングボックス表示-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.バウンディングボックス表示</h2>
+          <h3>🌸1.機能概要</h3>
+          <br />
+          オブジェクトサイズを視覚的に確認しながら編集できるため、より正確な配置が可能になります。<br /><br />
+
+          <h3>🌸2.対応ユニット</h3>
+          <br />
+          オブジェクトエンティティ、創造物エンティティ<br /><br />
+
+          <h3>🌸3.開き方</h3>
+          <br /><img src="img/13.png" /><br /><br />
+          モデル→表示タイプ<br /><br />
+
+          <h3>🌸4.表示タイプ</h3>
+          <div class="content-box">
+            <p>サイズのみ</p>
+            <br />
+            <img src="img/14.png" style="width: 20%" /><br /><br />
+            <p>バウンディングボックスおよびサイズ</p>
+            <br />
+            <img src="img/15.png" style="width: 20%" /><br /><br />
+            <p>コリジョンとサイズ　※オブジェクトのみ</p>
+            <br />
+            <img src="img/16.png" style="width: 20%" />
+          </div>
+        </section>
+
+        <!--5.備考機能-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.備考機能</h2>
+          <h3>🌸1.Z軸表示</h3>
+          (1) 機能説明<br />
+          <hr />
+          <br />
+          Z軸の正方向を示す補助UIを表示します。。<br /><br />
+
+          (2) 開き方<br />
+          <hr />
+          <br />
+          <img src="img/17.png" /><br /><br />
+          詳細パネル→下部→編集ツール<br /><br />
+
+          (3) 視覚効果<br />
+          <hr />
+          <br />
+          <img src="img/18.png" /><br /><br />
+
+          <h3>🌸2.3D備考</h3>
+          (1) 機能説明<br />
+          <hr />
+          <br />
+          アイコンとテキストを使用して、編集シーン内のオブジェクトに備考を付けられます。<br /><br />
+
+          (2) 開き方<br />
+          <hr />
+          <br />
+          <img src="img/19.png" /><br /><br />
+          詳細パネル→下部→編集ツール<br /><br />
+
+          (3) 視覚効果<br />
+          <hr />
+          <br />
+          <img src="img/20.png" /><br /><br />
+
+          <h3>🌸3.常時備考表示</h3>
+          (1) 機能説明<br />
+          <hr />
+          <br />
+          ステージ設定から、すべてのメモを常時表示するかどうかを制御できます。<br /><br />
+
+          (2) 開き方<br />
+          <hr />
+          <br />
+          <img src="img/21.png" />
+        </section>
+
+        <!--6.モデルデータのコピー＆ペースト-->
+        <section class="section">
+          <h2 id="6" class="anchor-title">
+            ⭐6.モデルデータのコピー＆ペースト
+          </h2>
+          <h3>🌸1.機能説明</h3>
+          <br />
+          オブジェクトモデルのデータをコピーできます。
+          <div class="content-box">
+            <p>コピー対称</p>
+            <li>メインモデル</li>
+            <li>すべての装飾</li>
+            <br />
+            <p style="color: tomato">※創造物は装飾品のみコピーされます。</p>
+          </div>
+
+          <h3>🌸2.開き方</h3>
+          <img src="img/22.png" /><br /><br />
+          モデル→コピー
+        </section>
+
+        <!--7.複数選択時の中心点表示-->
+        <section class="section">
+          <h2 id="7" class="anchor-title">⭐7.複数選択時の中心点表示</h2>
+          <h3>🌸1.機能説明</h3>
+          <img src="img/23.png" /><br /><br />
+          複数オブジェクトを選択した際に、選択グループの中心位置を表示します。
+        </section>
+
+        <!--8.距離測定-->
+        <section class="section">
+          <h2 id="8" class="anchor-title">⭐8.距離測定</h2>
+          <h3>🌸1.概要</h3>
+          <br />
+          距離測定ツールは、シーン内の距離を計測できる標準機能です。<br /><br />
+
+          <h3>🌸2.ツールの使い方</h3>
+          <br />
+          <img src="img/24.png" /><br /><br />
+          <img src="img/25.png" style="width: 60%" />
+          <div class="content-box">
+            <p>右クリックメニュー→測距線→測距線を追加</p>
+            <br />
+            <p>
+              「測距線を追加」をクリックすると、計測モードに入ります。<br />
+              地面上を2箇所クリックして地点を指定すると、その2点間の距離が画面上に表示されます。
+            </p>
+          </div>
+
+          <h3>🌸3.測距線の削除</h3>
+          <div class="content-box">
+            <li>1.個別の測距線を削除する</li>
+            <li>2.右クリックメニュー→測距線→すべて削除</li>
+          </div>
+
+          <h3>🌸4.エディタ設定</h3>
+          <img src="img/26.png" /><br /><br />
+          クイック設定から、測距線を常時表示するかどうかを選択できます。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
