@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.エクスポート方法1 - ステージ上で選択</a>
+      <a href="#3">3.エクスポート方法2 - ステージ上で複数選択</a>
+      <a href="#4">4.エクスポート方法3 - UIでの単一/複数選択</a>
+      <a href="#5">5.ローカルアセットのインポート/読込</a>
+      <a href="#6">6.アセットの使用方法</a>
+      <a href="#7">7.統合アセットの使用</a>
+      <a href="#8">8.参照関係の復元</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>アセットのインポートとエクスポート</h2>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          この機能を使用すると、作成した特定のコンテンツをデータとして書き出すことができます。<br />
+          これにより、自分で再利用するのはもちろんのこと、他のユーザーと共有することが可能になります。
+        </section>
+
+        <!--2.エクスポート方法1 - ステージ上で選択-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">
+            ⭐2.エクスポート方法1 - ステージ上で選択
+          </h2>
+          <h3>🌸1.開き方</h3>
+          <br />
+          (1) 右クリックメニュー<br />
+          <hr />
+          <br />
+
+          <img src="img/1.png" />
+          <div class="content-box">
+            <p>以下の場所から実行できます。</p>
+            <br />
+            <li>
+              <b>地形編集</b
+              >：地形エンティティ、オブジェクトエンティティ、創造物エンティティ
+            </li>
+            <li>
+              <b>エンティティ配置</b
+              >：オブジェクトエンティティ、創造物エンティティ
+            </li>
+            <li>
+              <b>プレハブライブラリ</b>：オブジェクトプレハブ、創造物プレハブ
+            </li>
+            <li><b>星々の箱庭</b>：サーバーノードグラフ、複合ノード</li>
+          </div>
+
+          (2) アセットバーで右クリック<br />
+          <hr />
+          <br />
+
+          <img src="img/2.png" />
+          <div class="content-box">
+            <p>以下の場所から実行できます。</p>
+            <br />
+
+            <li>
+              <b>プレハブライブラリ</b>：オブジェクトプレハブ、創造物プレハブ
+            </li>
+            <li>
+              <b>戦闘プリセット</b
+              >：ユニット状態、スキル、アイテム、エフェクトツール
+            </li>
+          </div>
+
+          <h3>🌸2.機能の動作</h3>
+          <br />
+          選択したコンテンツからアーカイブファイル(.gia)を生成します。<br /><br />
+
+          <h3>🌸3.エクスポート時に含まれる内容</h3>
+
+          <div class="content-box">
+            <li>
+              <b>プレハブのエクスポート</b
+              >：紐づけられているノードグラフも一緒にエクスポートされます。
+            </li>
+            <li>
+              <b>エンティティのエクスポート</b
+              >：参照しているプレハブ、紐づけられているノードグラフも一緒にエクスポートされます。
+            </li>
+          </div>
+
+          <h3>🌸4.操作手順</h3>
+          <div class="content-box">
+            <li>1.エクスポートしたいコンテンツを選択</li>
+            <li>2.「アセットをエクスポート」をクリック</li>
+            <li>3.保存先フォルダとファイル名を指定</li>
+            <li>4.ファイル生成完了まで待ちます</li>
+            <li>5.完了すると指定した場所に.giaファイルが作成されます</li>
+          </div>
+        </section>
+
+        <!--3.エクスポート方法1 - ステージ上で複数選択-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">
+            ⭐3.エクスポート方法1 - ステージ上で複数選択
+          </h2>
+          <h3>🌸1.開き方</h3>
+          <div class="content-box">
+            <p>利用可能な場所</p>
+            <br />
+            <li>
+              <b>地形編集</b
+              >：地形エンティティ、オブジェクトエンティティ、創造物エンティティ
+            </li>
+            <li>
+              <b>エンティティ配置</b
+              >：オブジェクトエンティティ、創造物エンティティ
+            </li>
+            <li>
+              <b>プレハブライブラリ</b>：オブジェクトプレハブ、創造物プレハブ
+            </li>
+          </div>
+
+          <h3>🌸2.機能の動作</h3>
+          <br />
+          複数選択されたアセットをまとめて1つの.giaファイルとして出力します。<br />
+          外部アセットを読み込むと、「Import and
+          Transfer（インポートと転送）」画面では1つの統合パッケージとして表示されます。<br />
+
+          アセット転送後は、アセットバー内の「アセットをインポート」に統合アセットとして表示され、そのまま利用できます。<br /><br />
+
+          <h3>🌸3.操作手順</h3>
+          <br />
+          単一選択でエクスポートした時と同じです。<br /><br />
+
+          <h3>🌸4.エクスポート時に含まれる内容</h3>
+
+          <div class="content-box">
+            <li>
+              <b>プレハブのエクスポート</b
+              >：紐づけられているノードグラフも一緒にエクスポートされます。
+            </li>
+            <li>
+              <b>エンティティのエクスポート</b
+              >：参照しているプレハブ、紐づけられているノードグラフも一緒にエクスポートされます。
+            </li>
+          </div>
+        </section>
+
+        <!--4.エクスポート方法3 - UIでの単一/複数選択-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">
+            ⭐4.エクスポート方法3 - UIでの単一/複数選択
+          </h2>
+          <h3>🌸1.開き方</h3>
+          <br />
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          左上のシステムメニューを開き、「アセットのインポートとエクスポート」をクリックします。<br /><br />
+
+          <h3>🌸2.メイン画面</h3>
+          <br />
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+
+          <h3>🌸3.機能の動作</h3>
+          <br />
+          この機能では複数アセットを素早く選択してエクスポートできます。<br />
+          個別エクスポート対応アセットであれば、どの種類でも選択可能です。<br />
+          複数アセットを選択した場合は、1つの.giaファイルとしてまとめられ、その後も統合アセットとして利用できます。<br /><br />
+
+          <h3>🌸4.操作手順</h3>
+          <br />
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          エクスポートしたいアセットをクリックして選択します。<br />
+          再度クリックすることで選択解除することができます。<br /><br />
+
+          <img src="img/6.png" style="width: 60%" /><br />
+          <img src="img/7.png" style="width: 60%" /><br /><br />
+          左下のアイコンをクリックすることで、選択中のエンティティを確認することができます。<br /><br />
+
+          <img src="img/8.png" /><br /><br />
+          エクスポートする対象がすべて選択できたら、右下のアセットをエクスポートをクリックします。<br /><br />
+
+          <img src="img/9.png" /><br /><br />
+          OKボタンをクリックします。<br /><br />
+
+          その後は、エクスポート先のフォルダを選択し、ファイル名を入力して保存してください。<br /><br />
+        </section>
+
+        <!--5.ローカルアセットのインポート/読込-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">
+            ⭐5.ローカルアセットのインポート/読込
+          </h2>
+          <h3>🌸1.開き方</h3>
+          <br />
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          左上のシステムメニューを開き、「アセットのインポートとエクスポート」をクリックします。<br /><br />
+
+          <h3>🌸2.機能の動作</h3>
+          <br />
+          指定したローカルフォルダ内の保存ファイルを読み込み、星々の幻境のアセットライブラリで利用できるようにします。<br />
+          ローカルアセットをインポートするたびに、星々の幻境のアセットライブラリ内の内容はすべて削除され、新しく読み込んだ内容に置き換えられます。<br /><br />
+
+          <h3>🌸3.自動インポート</h3>
+          <br />
+          アプリ起動後、星々の幻境を初めて開いたとき（アプリを閉じるまで有効）、ローカルファイルが自動的に読み込まれます。<br /><br />
+
+          <h3>🌸4.操作手順</h3>
+          <br /><img src="img/10.png" style="width: 60%" /><br /><br />
+          右下の「外部アセットの読み込み」をクリックします。<br /><br />
+          <img src="img/11.png" /><br /><br />
+          確認されるので、「外部アセットの読み込み」をクリックします。<br /><br />
+          <p style="color: tomato">
+            ※所定のフォルダにファイルを置いていない場合は、ディレクトリを開くからフォルダを開き、そこにインポートするファイルを格納してください。
+          </p>
+          <br />
+          読み込みに成功するとインポートしたいファイルが画面上に表示されます。<br /><br />
+
+          <h3>🌸5.アセット内容の確認</h3>
+          <br />
+          <img src="img/12.png" /><br /><br />
+          アセットを右クリックすると、パッケージの中身を確認が表示されます。<br /><br />
+          <img src="img/13.png" style="width: 60%" /><br /><br />
+          クリックすると中身を確認することができます。
+        </section>
+
+        <!--6.アセットの使用方法-->
+        <section class="section">
+          <h2 id="6" class="anchor-title">⭐6.アセットの使用方法</h2>
+          <h3>🌸1.開き方</h3>
+
+          <br />
+          アセットバーのアセットライブラリ<br /><br />
+          <img src="img/14.png" style="width: 60%" /><br /><br />
+          ノードグラフ外部アセット、ノード外部アセット<br /><br />
+          <img src="img/15.png" style="width: 60%" /><br /><br />
+          <img src="img/16.png" style="width: 60%" /><br /><br />
+
+          <h3>🌸2.機能概要</h3>
+          <div class="content-box">
+            <li>
+              <b>プレハブアセット</b
+              >：指定したカスタムアセットバーのタブへ追加されます
+            </li>
+            <li><b>エンティティアセット</b>：ステージ上へ配置されます</li>
+          </div>
+
+          <h3>🌸3.使用時に一緒に追加されるもの</h3>
+          <br />
+          アセットを使用すると、関連するノードグラフ、プレハブも同時に追加されます。<br />
+          追加先はデフォルトタブ または 「アセットをインポート」タブです。<br /><br />
+
+          <h3>🌸4.操作手順</h3>
+          <br />
+          <img src="img/17.png" /><br /><br />
+          アセット欄で左クリックをするか、右クリックメニューから「アセット転送」をクリックします。<br /><br />
+          <img src="img/18.png" style="width: 60%" /><br /><br />
+          タブ選択のポップアップが表示されます。<br />
+          所属タブを選択してOKをクリックしましょう。<br /><br />
+          <img src="img/19.png" /><br /><br />
+          アセットが複合の場合は、別のタブ選択の確認ポップアップが表示されます。<br /><br />
+          <img src="img/20.png" style="width: 60%" /><br /><br />
+          インポートに成功すると、アセットが展開され使用できるようになります。
+        </section>
+
+        <!--7.統合アセットの使用-->
+        <section class="section">
+          <h2 id="7" class="anchor-title">⭐7.統合アセットの使用</h2>
+
+          <h3>🌸1.開き方</h3>
+          <br />
+          <img src="img/21.png" style="width: 60%" /><br /><br />
+          統合アセットに含まれる全種類のアセットが、それぞれのアセットバー内に表示されます。<br /><br />
+
+          <h3>🌸2.機能概要</h3>
+
+          <br />
+          統合アセットを使用すると、その中に含まれているプレハブ、エンティティ、ノードグラフなどすべてのアセットが一括で追加されます。<br /><br />
+
+          <h3>🌸3.操作手順</h3>
+          <br />
+          <img src="img/19.png" /><br /><br />
+          統合アセット使用時には、デフォルトタブ、アセットをインポートタブのどちらに追加するか選択できます。<br />
+          <p style="color: tomato">
+            ※アセットをインポートタブが存在しない場合は、自動で作成されます。
+          </p>
+        </section>
+
+        <!--8.参照関係の復元-->
+        <section class="section">
+          <h2 id="8" class="anchor-title">⭐8.参照関係の復元</h2>
+
+          <h3>🌸1.機能概要</h3>
+          <br />
+
+          「<a href="#3">3.エクスポート方法2 - ステージ上で複数選択</a>」 または
+          「<a href="#4">4.エクスポート方法3 - UIでの単一/複数選択</a>」
+          で統合アセットを書き出した場合、アセット同士の参照関係も同時に記録されます。<br /><br />
+          統合アセットを読み込む際には、GUIDを置き換える仕組みによって参照関係が維持されます。<br /><br />
+          つまり、同じ統合アセットパッケージ内でエクスポートしたものは、インポート後も相互参照が壊れず、エクスポート前と同じ関係を保ったまま利用できるという仕組みです。<br /><br />
+
+          <h3>🌸2.重要事項</h3>
+          <div class="content-box">
+            <p style="color: tomato">
+              参照関係が正しく保持されるよう、参照を含むアセットは使用前にまとめて1つのアセットとしてエクスポートしてください。
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
