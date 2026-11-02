@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.機能概要</a>
+      <a href="#2">2.開き方</a>
+      <a href="#3">3.マルチプレイテストルーム</a>
+      <a href="#4">4.マルチテストプレイ中の操作</a>
+      <a href="#5">5.マルチテストプレイの集計</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>マルチテストプレイ</h2>
+        </section>
+
+        <!--1.機能概要-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.機能概要</h2>
+          この機能は、編集したステージでマルチプレイのシチュエーションをシミュレートし、ステージ演出を素早く検証するためのものです。<br /><br />
+        </section>
+
+        <!--2.開き方-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.開き方</h2>
+          <img src="img/1.png" style="width: 60%" /><br /><br />
+          左上のシステムメニューを開き、「マルチテストプレイ」をクリックします。
+        </section>
+
+        <!--3.マルチプレイテストルーム-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.マルチプレイテストルーム</h2>
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          テストプレイ時と同じように、テストプレイ検証が行われます。チェックOKになると、マルチテストプレイルームの画面に切り替わります。<br /><br />
+          <p style="color: tomato">
+            マルチテストプレイでは、最後にテスト検証が行われたデータが読み込まれます。<br />
+            ステージ編集をした場合は、最新の変更内容を反映させるために、必ず「ステージ更新」を実行してください。
+          </p>
+          <br /><br />
+
+          <h3>🌸1.ルーム機能</h3>
+          (1) 待機エリア<br />
+          <hr />
+          <br />
+          <img src="img/3.png" /><br /><br />
+          ルームに参加したプレイヤーは、待機エリアの空いている席に順次割り振られます。<br />
+          待機エリアにいるプレイヤーは、テストプレイには参加しません。<br />
+          プレイヤーは、待機エリア または
+          準備エリアの空いている席をクリックすることで、移動することができます。<br /><br />
+          <p style="color: tomato">
+            ※ステージ製作者がテストプレイに参加しなくてもテストプレイは開始できます。
+          </p>
+          <br /><br />
+
+          (2) 準備エリア<br />
+          <hr />
+          <br />
+          <img src="img/4.png" /><br /><br />
+          テストプレイに参加するプレイヤーが待機する場所です。<br /><br />
+
+          招待されたプレイヤーは画面右下の「準備完了」ボタンをクリックする必要があります。<br />
+          <p style="color: tomato">
+            ホストがゲームを開始した時に、準備完了を押していないプレイヤーは待機エリアに移動されます。
+          </p>
+
+          <br /><br />
+
+          (3) プレイヤー招待<br />
+          <hr />
+          <br />
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          ホストが「招待」ボタンをクリックすると、右側に「招待」画面が表示されます。
+
+          <div class="content-box">
+            <li>
+              <b>UIDで検索</b>：UIDを入力してプレイヤーを検索できます。<br />
+              検索後、招待ボタンから招待を送信し、相手が承認するとルームに参加します。
+            </li>
+            <li>
+              <b>今日の招待</b>今日招待したプレイヤーが表示されます。<br />
+              招待ボタンから、再度招待を送ることができます。
+            </li>
+            <li>
+              <b>フレンド</b>オンラインのフレンドが表示されます。<br />
+              招待ボタンから、招待を送信することができます。
+            </li>
+          </div>
+
+          <div class="content-box">
+            <p>招待プレイヤー</p>
+            <br />
+            マルチプレイテストプレイ招待への応答時間は15秒です。<br />
+            時間内に応答しない場合、自動的に辞退扱いになります。
+          </div>
+
+          <div class="content-box">
+            <p>招待に関する制限</p>
+            <br />
+            <li>
+              1日につき最大16名までテストプレイに招待できます。<br />
+              「本日の招待枠」は午前0時にリセットされます。/li>
+            </li>
+
+            <li>
+              現在ステージや秘境をプレイ中、または編集中のプレイヤーは、テストプレイの招待を受け取ることができません。
+            </li>
+          </div>
+
+          (4) テストプレイ開始<br />
+          <hr />
+          <br />
+          <img src="img/6.png" style="width: 60%" /><br /><br />
+          ホストは、右下の「ゲーム開始」ボタンからテストプレイを開始できます。<br />
+          テストプレイが始まると、準備エリアのすべての席は参加不可となります。<br />
+          テストプレイに入ったプレイヤーの状態は「プレイ中」に切り替わり、コーデ展示フェーズが開始されます。<br /><br />
+
+          <h3>🌸2.テストプレイ設定</h3>
+          (1) ステージ更新<br />
+          <hr />
+          <br />
+          <img src="img/7.png" /><br /><br />
+          最後に編集されたステージをマルチテストプレイルームにアップロードします。<br />
+          この操作を事項すると、全プレイヤーが待機エリアへ移動し、再度「準備完了」の状態にする必要があります。<br /><br />
+
+          (2) テストプレイレポートを生成<br />
+          <hr />
+          <br />
+          <img src="img/8.png" /><br /><br />
+          この機能を有効にすると、テストプレイに参加した全プレイヤーのローカル環境で、終了時に自動的にレポートが生成されます。<br /><br />
+          これは「負荷検出」を確認するためのもので、クリエイターはこのレポートをインポートすることで、各プレイヤーのセッション中における動的負荷を詳細に確認することができます。<br /><br />
+          <img src="img/9.png" style="width: 60%" />
+          <div class="content-box">
+            <b>保存パス</b
+            >：C:\Users%USERPROFILE%\AppData\LocalLow\miHoYo\Genshin
+            Impact\BeyondLocal(プレイヤーのUID)\Beyond_Performance_Report
+          </div>
+
+          (3) コーデ展示段階を有効<br />
+          <hr />
+          <br />
+          <img src="img/10.png" /><br /><br />
+          無効にすることで、テストプレイ時にコーデ展示のフェーズをスキップして、直接ロード画面へ移動します。<br /><br />
+
+          (4) テストプレイ集計を有効<br />
+          <hr />
+          <br />
+          <img src="img/11.png" /><br /><br />
+          無効にすることで、テストプレイ時にコーデ展示のフェーズをスキップして、直接ロード画面へ移動します。<br /><br />
+
+          (5) テストプレイ時の言語<br />
+          <hr />
+          <br />
+          <img src="img/12.png" /><br /><br />
+          設定した言語でテストプレイを開始します。<br />
+          各プレイヤーで設定することができます。<br /><br />
+
+          (6) お試しドール<br />
+          <hr />
+          <br />
+          <img src="img/13.png" /><br /><br />
+          設定したドールでテストプレイを開始します。<br />
+          各プレイヤーで設定することができます。<br /><br />
+
+          (7) テストプレイデータ設定<br />
+          <hr />
+          <br />
+          <img src="img/14.png" /><br /><br />
+          テストプレイを開始する前に、ホストは各席の右上にある設定ボタンから、席毎のデータを設定できます。<br />
+          <p style="color: tomato">※これらの設定は席毎に紐づけられています。</p>
+          <br /><br />
+
+          (8) テストプレイ中のプレイヤー管理<br />
+          <hr />
+          <br />
+          ホストは、招待したプレイヤーを削除したり待機エリアへ移動させたりすることができます。
+          <div class="content-box">
+            <b>プレイヤーを退出させる</b
+            >：テストプレイルームからプレイヤーを退出させます。<br />
+            プレイヤーがテストプレイ中の場合は、プレイが終了した時点で退出となります。<br /><br />
+            <b>待機エリアに移動させる</b
+            >：プレイヤーを空いている待機エリアの席へ移動させます。
+          </div>
+
+          (9) ルーム解散<br />
+          <hr />
+          <br />
+          <img src="img/15.png" /><br /><br />
+          ホストは、「解散」ボタンからマルチテストプレイルームを閉じることができます。<br />
+          解散すると、全てのプレイヤーはルームに参加する前の場所に戻ります。<br /><br />
+
+          (10) ルーム折り畳み<br />
+          <hr />
+          <br />
+          <img src="img/16.png" /><br /><br />
+          ホストは、「閉じる」ボタンから、マルチテストプレイルームを最小化し、画面上部のメニューバーに格納します。<br />
+          この操作を行ってもルームは維持され、招待されたプレイヤーはそのままルーム内に残ります。<br /><br />
+        </section>
+
+        <!--4.マルチテストプレイ中の操作-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.マルチテストプレイ中の操作</h2>
+
+          <h3>🌸1.退出</h3>
+          <br />
+          <img src="img/17.png" /><br /><br />
+          テストプレイ中に、左上の「退出」ボタン または
+          Escキーから「テストプレイ制御画面」を開くことができます。<br /><br />
+
+          <h3>🌸2.テストプレイ制御</h3>
+          <br />
+          <img src="img/9.png" style="width: 60%" /><br /><br />
+
+          (1) 挑戦を続ける<br />
+          <hr />
+          <div class="content-box">
+            <b>ホストが可能な操作</b>：再挑戦、挑戦を中断する<br /><br />
+            <b>招待プレイヤーが可能な操作</b>挑戦を中断する<br /><br />
+            <p style="color: tomato">
+              マルチテストプレイ中に、いずれかのプレイヤーがセッションを途中で退室した場合、再挑戦はできません。
+            </p>
+          </div>
+        </section>
+
+        <!--5.マルチテストプレイの集計-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.マルチテストプレイの集計</h2>
+
+          <img src="img/18.png" style="width: 60%" /><br /><br />
+          テストプレイが終了すると、ステージ設定に基づき、集計フローの実行およびリザルト画面の表示が行われます。<br />
+          クリエイターは、ステージ設定の「集計」からこれらの設定を行うことができます。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
