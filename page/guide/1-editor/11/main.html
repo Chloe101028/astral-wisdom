@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.星々の幻境エディタ画面</a>
+      <a href="#2">2.星々の箱庭画面</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>取り消し/復元</h2>
+        </section>
+
+        <!--1.星々の幻境エディタ画面-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.星々の幻境エディタ画面</h2>
+          <img src="img/1.png" style="width: 60%" /><br /><br />
+          画面右上のボタンをクリックするか、Ctrlキー＋Zキー /
+          Ctrlキー＋Yキーで直近の操作を取り消したり、再度適用したりできます。<br /><br />
+
+          履歴は最大で50手まで保存されます。この上限を超えた操作は記録されません。<br />
+        </section>
+
+        <!--2.星々の箱庭画面-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.星々の箱庭画面</h2>
+          <img src="img/2.png" style="width: 60%" /><br /><br />
+          画面下のボタンをクリックするか、Ctrlキー＋Zキー /
+          Ctrlキー＋Yキーで直近の操作を取り消したり、再度適用したりできます。<br /><br />
+
+          履歴は最大で20手まで保存されます。この上限を超えた操作は記録されません。<br /><br />
+
+          <img src="img/3.png" /><br /><br />
+          履歴リストを開き、任意のステップをクリックすることで、その時点まで操作を戻したり、復元したりすることができます。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
