@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../page/guide/">ガイド</a>
+          <a href="../../../../page/event/">イベント関連</a>
+          <a href="../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.基本概念</a>
+      <a href="#2">2.ユニットの種類</a>
+      <a href="#3">3.エンティティ編集と配置</a>
+      <a href="#4">4.詳細パネル</a>
+      <a href="#5">5.一時エンティティ</a>
+      <a href="#6">6.静的エンティティ</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>ユニット</h2>
+          <div class="content-box">
+            <p>
+              ユニットとは、ゲーム内で動くキャラクターや置物など、データが一つにまとまったものを指し、<br />
+              ゲーム内での実体はエンティティと呼ばれます。
+            </p>
+            <br />
+            <li>複雑なロジックを実行できるもの→動的エンティティ</li>
+            <li>モデル配置や表示設定のみを行うもの→静的エンティティ</li>
+            <li>すべてのエンティティはプレハブを元に作成されます。</li>
+          </div>
+        </section>
+
+        <!--1.基本概念-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.基本概念</h2>
+
+          <img src="img/1.png" style="width: 60%" /><br /><br />
+          すべてのエンティティは対応するプレハブデータから生成されます。<br />
+          エンティティ配置タブでアセットバーからプレハブをドラッグすると、「編集可能エンティティ」が作成されます。<br /><br />
+
+          <h3>🌸1.エンティティ</h3>
+          <br />エンティティとは、機能を持つ最小単位のデータ集合です。<br />
+          ゲーム実行中には変数として保持・受け渡しすることができます。
+          <div class="content-box">
+            <p>静的エンティティ以外は、以下を追加できます。</p>
+            <br />
+            <li>専用設定</li>
+            <li>共通コンポーネント</li>
+            <li>ノードグラフ</li>
+          </div>
+
+          <h3>🌸2.エンティティGUID</h3>
+          <br />
+          編集画面上の各エンティティには、同じプレハブから作られていても固有のGUIDが割り当てられます。<br />
+          GUIDはエンティティを一意に識別するIDです。<br /><br />
+
+          <h3>🌸3.プレハブ</h3>
+          <br />
+          プレハブは、事前に設定されたエンティティデータです。<br />
+          すべての編集可能エンティティはプレハブから生成されます。<br /><br />
+
+          <h3>🌸4.既製プレハブとカスタムプレハブ</h3>
+          <div class="content-box">
+            <p>システムには以下の既製プレハブが用意されています。</p>
+            <br />
+            <li>動的プレハブ</li>
+            <li>静的プレハブ</li>
+            <li>創造物プレハブ</li>
+            <br />
+            <p>
+              また、既製プレハブを編集して独自のカスタムプレハブとして保存できます。
+            </p>
+          </div>
+
+          <h3>🌸5.プレハブID</h3>
+          <br />
+          各プレハブには一意のIDがあります。<br />
+          ノードグラフからエンティティを作成できるのは、「動的プレハブ」「創造物プレハブ」のみです。
+        </section>
+
+        <!--2.ユニットの種類-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.ユニットの種類</h2>
+
+          <div class="content-box">
+            <p>ユニットには6種類あります。</p>
+            <br />
+            <li>プレイヤー</li>
+            <li>キャラクター</li>
+            <li>創造物</li>
+            <li>オブジェクト</li>
+            <li>ローカル投射物</li>
+            <li>ステージ</li>
+          </div>
+        </section>
+
+        <!--3.エンティティ編集と配置-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.エンティティ編集と配置</h2>
+
+          <h3>🌸1.編集可能エンティティの命名と管理</h3>
+          <br />
+          <img src="img/2.png" /><br /><br />
+          エンティティ配置タブ内の各エンティティには、「一意のエンティティ名」と「一意のGUID」が割り当てられます。<br /><br />
+
+          <h3>🌸2.実行時エンティティの命名とインデックス作成</h3>
+          <br />
+          実行時には、編集可能なエンティティデータから生成するか、プレハブ化されたコンポーネントを含むノードグラフを使用することで、実行時エンティティを生成できます。<br /><br />
+
+          <h3>🌸3.エンティティ編集</h3>
+          <img src="img/3.png" style="width: 60%" /><br /><br />
+          「エンティティ配置」タブ(①)を開くと、現在のプロジェクトファイルに含まれるすべてのカスタムプレハブ(②)とプリセットプレハブ(③)がサイドバーに表示されます。<br /><br />
+
+          エディタ画面にドラッグするか、クリックすることでエンティティをエディタ内に作成します。<br /><br />
+
+          「エンティティ配置」タブ内でエンティティの編集をすることはできますが、このタブで静的エンティティと動的エンティティを切り替えることはできません。<br /><br />
+          <img src="img/4.png" style="width: 60%" /><br /><br />
+          そのため、基本情報以外のタブに静的エンティティで切り替えようとすると、編集不可である旨のメッセージが表示されます。<br /><br />
+
+          <h3>🌸4.基本情報パネル</h3>
+          <img src="img/5.png" /><br /><br />
+          エンティティの基本属性が表示されます。<br />
+          タイプによって編集可能な項目が異なります。<br /><br />
+
+          <h3>🌸5.専用設定パネル</h3>
+          <img src="img/6.png" />
+          <div class="content-box">
+            <p>>以下の戦闘関連設定が可能です。</p>
+            <li>基礎戦闘ステータス</li>
+            <li>アグロ配置</li>
+            <li>戦闘設定</li>
+            <li>ハートボックス設定</li>
+            <li>能力ユニット</li>
+          </div>
+
+          <h3>🌸6.共通コンポーネントパネル</h3>
+          <img src="img/7.png" />
+          <br /><br />
+          エンティティへ機能を追加する主要システムです。<br />
+          「追加」「編集」「削除」が可能です。<br /><br />
+          <p style="color: tomato">
+            一部のエンティティでは、あらかじめコンポーネントが追加されていることがありますが、これらは必要に応じて自由に追加や削除が行えます。
+          </p>
+          <br /><br />
+
+          <h3>🌸7.ノードグラフパネル</h3>
+          <img src="img/8.png" />
+          <br /><br />
+          クリエイターが作るカスタムロジックスクリプトです。<br />
+          「追加」「編集」「削除」によってエンティティへ独自機能を実装できます。
+        </section>
+
+        <!--4.プレハブ編集-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.詳細パネル</h2>
+
+          <img src="img/9.png" style="width: 60%" /><br /><br />
+          プレハブライブラリ(①)に入った後、ステータスバーにあるオブジェクトアイコン(②)をクリックすると、オブジェクトプレハブ画面へ、創造物アイコン(③)をクリックすると、創造物プレハブ画面へ、ドロップアイコン(④)をクリックすると、ドロッププレハブ画面へアクセスできます。<br /><br />
+
+          作成したプレハブは、タブを追加して自由に管理することができます。<br /><br />
+
+          <h3>🌸1.命名と管理</h3>
+          <br />
+          <img src="img/10.png" style="width: 60%" /><br /><br />
+          保存時、プレハブ名(⑤)は一意である必要があります。<br /><br />
+
+          保存後にプレハブには一意のプレハブID(⑥)が生成されます。<br /><br />
+
+          ドロップダウンメニュー(⑦)から動的エンティティ用のプレハブ または
+          静的エンティティ用のプレハブに変更できます。<br />
+          幻境ステージに配置できる動的エンティティの数には上限があります。<br />
+          そのため、外観用に動的エンティティを使用している場合は、静的エンティティに変更するなどの工夫が必要になります。<br />
+
+          プレハブには機能を追加するための4つのタブがあります。(⑧)<br /><br />
+
+          <h3>🌸2.詳細編集パネル</h3>
+          <br />
+          エンティティと同じです。<br /><br />
+
+          <h3>🌸3.プレハブ保存</h3>
+          <img src="img/11.png" style="width: 60%" /><br /><br />
+          画面下部にある「保存」ボタンをクリックすると、カスタムプレハブと保存され、指定したタブ内に表示されます。<br /><br />
+          <img src="img/12.png" /><br /><br />
+          カスタムプレハブを編集している場合は、「プレハブを上書き保存」をクリックすることでカスタムプレハブが更新されます。<br />
+
+          「プレハブとして保存」をクリックすると、別の新しいカスタムプレハブとして保存されます。
+          <div class="content-box">
+            動的プレハブや創造物プレハブは、実行時にノードグラフの「プレハブを作衛」ノードを介して、実行時エンティティとして直接作成できます。<br />
+            <img src="img/13.png" /><br /><br />
+            プレハブをシーン内にドラッグしてエンティティの作成に成功した後は、そのエンティティに対して行ったいかなる変更も、元となったプレハブには一切影響しません（完全に独立しています）。
+          </div>
+        </section>
+
+        <!--5.一時エンティティ-->
+        <section class="section">
+          <h2 id="5" class="anchor-title">⭐5.一時エンティティ</h2>
+
+          ノードグラフの「プレハブを作成」ノードを使用すると、ゲーム実行中に直接エンティティを生成できます。<br />
+          これを一時エンティティと呼びます。<br /><br />
+          通常のエンティティとの違いは、「編集用のGUID」を持たないことだけで、それ以外の挙動は同じです。
+        </section>
+
+        <!--6.静的エンティティ-->
+        <section class="section">
+          <h2 id="6" class="anchor-title">⭐6.静的エンティティ</h2>
+          <div class="content-box">
+            <p>静的エンティティは以下を編集できません。</p>
+            <li>属性</li>
+            <li>コンポーネント</li>
+            <li>ノードグラフ</li>
+            <br />
+            プレイヤーは実行中にアクセスできず、主に背景や地形装飾用として使用されます。<br /><br />
+            また、静的エンティティは「プレハブを作成」ノードで生成できません。<br /><br />
+            作成方法は、「静的プレハブを作る」「エンティティ配置タブから配置する」のみです。
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../js/style.js"></script>
+  </body>
+</html>
