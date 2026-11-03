@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星々の学び舎</title>
+
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="../../../../../index.html" class="site-title">星々の学び舎</a>
+
+        <div class="menu">
+          <a href="../../../../../page/beginner/">初心者向け</a>
+          <a href="../../../../../page/guide/">ガイド</a>
+          <a href="../../../../../page/event/">イベント関連</a>
+          <a href="../../../../../page/support/">開発サポート</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="page-nav">
+      <a href="#1">1.プレイヤーの概念</a>
+      <a href="#2">2.プレイヤー設定</a>
+      <a href="#3">3.実行時の特性</a>
+      <a href="#4">4.ポインター常時表示</a>
+    </nav>
+
+    <div class="layout">
+      <div id="menu" class="sidebar"></div>
+
+      <main class="content">
+        <section class="section">
+          <h2>プレイヤー</h2>
+        </section>
+
+        <!--1.プレイヤーの概念-->
+        <section class="section">
+          <h2 id="1" class="anchor-title">⭐1.プレイヤーの概念</h2>
+          プレイヤーとは、一般的にゲームでは「操作する人」を意味しますが、原神では「キャラクターの所有者」という意味合いが強いです。<br />
+          この「プレイヤー」という枠組みが、キャラクターをどのように扱うかはゲームのモードによって異なります。<br /><br />
+
+          例えば、テイワット世界（クラシックモード）では、1人のプレイヤーという枠の中に、複数のキャラクターを持つことができます。<br />
+          一方でアドバンスモードでは、1人のプレイヤーに対して、操作できるキャラクターは常に1人です。
+        </section>
+
+        <!--2.プレイヤー設定-->
+        <section class="section">
+          <h2 id="2" class="anchor-title">⭐2.プレイヤー設定</h2>
+
+          <img src="img/1.png" style="width: 60%" /><br /><br />
+          プレイヤー固有の設定は、プレイヤーテンプレートから設定することができます。<br /><br />
+
+          戦闘プリセット(①)タブを開き、サイドバーからプレイヤー(②)を選択、プレイヤーテンプレート(③)をクリックして、「新規テンプレート作成(④)」から新しく作成することができます。
+          <br /><br />
+          <h3>🌸1.基本情報</h3>
+          <br />
+          <img src="img/2.png" />
+          <div class="content-box">
+            <p>基本情報タブでは、プレイヤーに関する各種初期設定を行います。</p>
+            <br />
+            <li>
+              <b>効果発動対象</b
+              >:このテンプレートを適用するプレイヤーを決定します。
+            </li>
+            <li><b>レベル</b>：プレイヤークラスの初期レベルを上書きします。</li>
+            <li>
+              <b>スポーン地点</b
+              >：プレイヤーが出現する地点を指定します。<br />利用可能なスポーン地点の一覧から選択します。
+            </li>
+            <li>
+              <b>初期ジョブ</b
+              >：このプレイヤーテンプレートが使用する初期クラスを設定します。
+            </li>
+            <li><b>復活</b>：プレイヤーに適用される復活ルールを設定します。</li>
+            <li>
+              <b>特殊ダウンダメージ</b
+              >：水に溺れたり落下ダメージなどの特殊な状況で戦闘不能になった時に差し引かれるHP割合を設定します。
+            </li>
+            <p style="color: tomato">
+              ※特殊状況から復活した場合は、復活回数は引かれず、復活の設定にも従いません。
+            </p>
+          </div>
+
+          <h3>🌸2.共通コンポーネント</h3>
+          <br />
+          <img src="img/3.png" />
+          <br /><br />
+          共通コンポーネントタブでは、プレイヤーエンティティにアタッチされているコンポーネントの追加・確認を行えます。
+          <div class="content-box">
+            <p>プレイヤーで利用できるコンポーネント</p>
+            <br />
+            <li>カスタム変数</li>
+            <li>グローバルタイマー</li>
+            <li>ユニット状態</li>
+          </div>
+
+          <h3>🌸3.ノードグラフ</h3>
+          <br />
+          <img src="img/4.png" />
+          <br /><br />
+          ノードグラフタブでは、プレイヤーエンティティにアタッチされたノードグラフの追加・確認を行います。<br />
+          プレイヤー固有のロジックを実装できます。
+        </section>
+
+        <!--3.実行時の特性-->
+        <section class="section">
+          <h2 id="3" class="anchor-title">⭐3.実行時の特性</h2>
+
+          <h3>🌸1.物理実体を持たない</h3>
+          <br />
+          プレイヤーエンティティは、純粋なロジック用エンティティです。<br />
+          つまり、シーン上に存在するオブジェクトではありません。<br /><br />
+
+          <h3>🌸2.配置情報を持たない</h3>
+          <br />
+          プレイヤーエンティティはステージ上へ直接配置されないため、位置や回転などの配置情報を保持しません。<br /><br />
+
+          <h3>🌸3.ライフサイクル</h3>
+          <br />
+          プレイヤーエンティティはステージの初期化中に作成され、ステージが破棄されるタイミングで削除されます。<br />
+          ユーザーが能動的に終了してロビーに戻る時も、プレイヤーエンティティは削除されます。
+        </section>
+
+        <!--4.ポインター常時表示-->
+        <section class="section">
+          <h2 id="4" class="anchor-title">⭐4.ポインター常時表示</h2>
+          <br />
+          「ポインター常時表示」機能は、主に画面のタップやクリックに関する機能を実装するために使用されます。<br /><br />
+
+          <h3>🌸1.設定箇所</h3>
+          <br />
+          <img src="img/5.png" style="width: 60%" /><br /><br />
+          プレイヤーテンプレート→プレイヤー編集→ポインター配置
+
+          <div class="content-box">
+            <li>
+              <b>ポインター常時表示</b
+              >：有効にするとプレイヤーのポインターが常に表示されます。
+            </li>
+            <li>
+              <b>クリック可能な階層</b
+              >：シーン、ハートボックス、オブジェクトコリジョン、ポインターコリジョン
+            </li>
+            <li>
+              <b>ポインターが選択可能な最大ターゲット数</b
+              >：カーソルで同時に選択できる対象数の上限を設定します。
+            </li>
+            <li>
+              <b>クリックでUIモジュールを貫通可能</b
+              >：無効にすると、UIをクリックした場合に、その先のシーンにはクリックが届かなくなります。
+            </li>
+          </div>
+
+          <h3>🌸2.備考</h3>
+          <br />
+          <img src="img/6.png" /><br /><br />
+          モバイル端末で「ポインター常時表示」機能を使用する場合、<br />
+          PC版でマウスクリックによって自動処理される「ターゲット選択の追加ロジック」を補完するために、<br />
+          ユニット状態の「ポインターをクリックしてスキルを発動」を使用する必要があります。
+        </section>
+      </main>
+    </div>
+
+    <script>
+      fetch("../../../menu.html")
+        .then((r) => r.text())
+        .then((html) => {
+          document.getElementById("menu").innerHTML = html;
+
+          document.querySelectorAll("details").forEach((details) => {
+            const summary = details.querySelector("summary");
+            const key = "menu-" + summary.textContent.trim();
+
+            const state = localStorage.getItem(key);
+
+            if (state !== null) {
+              details.open = state === "open";
+            }
+
+            details.addEventListener("toggle", () => {
+              localStorage.setItem(key, details.open ? "open" : "closed");
+            });
+          });
+
+          const current = window.location.pathname;
+
+          document.querySelectorAll("#menu a").forEach((link) => {
+            const url = new URL(link.href);
+
+            if (url.pathname === current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+
+    <footer>© 2026 星々の学び舎.</footer>
+    <script src="../../../../../js/style.js"></script>
+  </body>
+</html>
